@@ -94,12 +94,16 @@ header.top{
    entirely, so the wrap decision no longer depends on tagline length. */
 .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); flex:1 1 0%; min-width:0; }
 .brand img{ width:42px; height:42px; border-radius:50%; flex-shrink:0; }
-/* Logo-only header on phones — matches the same simplification on the
-   Tomb of the Kings site. The hero right below already shows the full
-   name, so nothing is lost, and it removes any risk of the header text
-   crowding the language dropdown on narrow screens. Name stays
-   available to screen readers via the link's aria-label. */
-@media (max-width: 480px){ .brand .name{ display:none; } }
+/* Slim, language-only header on phones — matches the same
+   simplification on the Tomb of the Kings site. The hero right below
+   already shows the logo (bigger) and full name, so repeating a small
+   logo here just added height without information. Dropping the whole
+   brand block and tightening the bar keeps the language switcher
+   reachable while scrolling, without the wasted-looking bar. */
+@media (max-width: 480px){
+  .brand{ display:none; }
+  .topbar{ justify-content:center; padding:8px 24px; }
+}
 /* No white-space:nowrap here on purpose: forcing the title onto one
    line risks it overflowing and overlapping the language dropdown at
    some real-device width. Wrapping to a second line degrades safely. */
