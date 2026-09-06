@@ -94,7 +94,10 @@ header.top{
    entirely, so the wrap decision no longer depends on tagline length. */
 .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); flex:1 1 0%; min-width:0; }
 .brand img{ width:42px; height:42px; border-radius:50%; flex-shrink:0; }
-.brand .name{ font-weight:800; font-size:1.05rem; letter-spacing:0.2px; white-space:nowrap; }
+/* No white-space:nowrap here on purpose: forcing the title onto one
+   line risks it overflowing and overlapping the language dropdown at
+   some real-device width. Wrapping to a second line degrades safely. */
+.brand .name{ font-weight:800; font-size:1.05rem; letter-spacing:0.2px; }
 .brand .name small{ display:block; font-weight:500; font-size:0.7rem; color:var(--muted); white-space:normal; }
 .top-right{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; flex-shrink:0; }
 nav.links{ display:flex; gap:22px; font-size:0.92rem; font-weight:600; }
