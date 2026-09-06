@@ -242,6 +242,14 @@ p.section-sub{
 footer{ background:#150d0b; color:#cbb; padding: 40px 24px 26px; text-align:center; font-size:0.85rem; }
 footer > *{ max-width: 640px; margin-left:auto; margin-right:auto; }
 footer .fbrand{ display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:14px; }
+footer .social{ display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:18px; }
+footer .social-label{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em; color:#8a7a72; }
+footer .social-icon{
+  width:32px; height:32px; border-radius:50%; display:inline-flex;
+  align-items:center; justify-content:center;
+  background: rgba(255,255,255,0.08); color:#fff;
+}
+footer .social-icon:hover{ background: var(--gold); color: var(--ink); }
 footer .fbrand img{ width:32px; height:32px; border-radius:50%; background: var(--paper); }
 footer .fbrand span{ color:#fff; font-weight:800; }
 footer a{ color: var(--gold); text-decoration:none; }
@@ -335,7 +343,6 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
 
         <div class="loc-actions">
           <a class="btn primary small" href="tel:+35796774055" data-i18n="loc.callBtn">Call to order</a>
-          <a class="btn ghost small" href="https://www.facebook.com/theflyingdragonchinese/" target="_blank" rel="noopener" data-i18n="loc.facebook">Facebook</a>
         </div>
       </div>
     </div>
@@ -404,6 +411,12 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
 
 <footer>
   <div class="fbrand"><img src="assets/logo.png" alt="Flying Dragon logo"><span>The Flying Dragon</span></div>
+  <div class="social">
+    <span class="social-label" data-i18n="social.followUs">Follow us</span>
+    <a class="social-icon" href="https://www.facebook.com/theflyingdragonchinese/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.48 17.52 2 11.94 2S1.88 6.48 1.88 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.42V9.86c0-2.39 1.42-3.72 3.61-3.72 1.05 0 2.15.19 2.15.19v2.36h-1.21c-1.2 0-1.57.74-1.57 1.5v1.8h2.68l-.43 2.91h-2.25V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+    </a>
+  </div>
   <div><span data-i18n="footer.tagline">Thai and Chinese Takeaway</span>, Makariou III Ave, Emba, Paphos 8250 &nbsp;·&nbsp; <a href="tel:+35796774055">96 774055</a></div>
   <div class="fine"><span data-i18n="footer.fine">Hours shown are subject to change around public holidays — call ahead to confirm.</span> © <span id="year"></span> The Flying Dragon Thai and Chinese Takeaway.</div>
 </footer>
@@ -424,7 +437,7 @@ var translations = {
     'hero.starsSuffix': 'out of 5 (219 reviews) on TripAdvisor',
     'hero.callBtn': 'Call to order', 'hero.orderBtn': 'Order online',
     'loc.title': 'Location & hours', 'loc.sub': 'Takeaway and delivery only.', 'loc.kind': 'Takeaway · Delivery',
-    'loc.directions': 'Get directions →', 'loc.callBtn': 'Call to order', 'loc.facebook': 'Facebook',
+    'loc.directions': 'Get directions →', 'loc.callBtn': 'Call to order', 'social.followUs': 'Follow us',
     'status.checking': 'Checking hours…', 'status.closedToday': 'Closed today',
     'status.openPrefix': 'Open now · closes ', 'status.closedNow': 'Closed now',
     'status.closedOpensPrefix': 'Closed · opens ', 'status.closedOpensSuffix': ' today',
@@ -450,7 +463,7 @@ var translations = {
     'hero.starsSuffix': 'στα 5 (219 κριτικές) στο TripAdvisor',
     'hero.callBtn': 'Καλέστε για παραγγελία', 'hero.orderBtn': 'Παραγγελία online',
     'loc.title': 'Ώρες & Τοποθεσία', 'loc.sub': 'Μόνο take away και delivery.', 'loc.kind': 'Take Away · Delivery',
-    'loc.directions': 'Οδηγίες διαδρομής →', 'loc.callBtn': 'Καλέστε για παραγγελία', 'loc.facebook': 'Facebook',
+    'loc.directions': 'Οδηγίες διαδρομής →', 'loc.callBtn': 'Καλέστε για παραγγελία', 'social.followUs': 'Ακολουθήστε μας',
     'status.checking': 'Έλεγχος ωραρίου…', 'status.closedToday': 'Κλειστά σήμερα',
     'status.openPrefix': 'Ανοιχτά τώρα · κλείνει στις ', 'status.closedNow': 'Κλειστά τώρα',
     'status.closedOpensPrefix': 'Κλειστά · ανοίγει στις ', 'status.closedOpensSuffix': ' σήμερα',
@@ -476,7 +489,7 @@ var translations = {
     'hero.starsSuffix': 'из 5 (219 отзывов) на TripAdvisor',
     'hero.callBtn': 'Позвонить и заказать', 'hero.orderBtn': 'Заказать онлайн',
     'loc.title': 'Адрес и часы работы', 'loc.sub': 'Только навынос и доставка.', 'loc.kind': 'Навынос · Доставка',
-    'loc.directions': 'Проложить маршрут →', 'loc.callBtn': 'Позвонить и заказать', 'loc.facebook': 'Facebook',
+    'loc.directions': 'Проложить маршрут →', 'loc.callBtn': 'Позвонить и заказать', 'social.followUs': 'Мы в соцсетях',
     'status.checking': 'Проверка часов работы…', 'status.closedToday': 'Сегодня закрыто',
     'status.openPrefix': 'Открыто сейчас · закрывается в ', 'status.closedNow': 'Сейчас закрыто',
     'status.closedOpensPrefix': 'Закрыто · открывается в ', 'status.closedOpensSuffix': ' сегодня',
@@ -502,7 +515,7 @@ var translations = {
     'hero.starsSuffix': 'von 5 (219 Bewertungen) auf TripAdvisor',
     'hero.callBtn': 'Zum Bestellen anrufen', 'hero.orderBtn': 'Online bestellen',
     'loc.title': 'Standort & Öffnungszeiten', 'loc.sub': 'Nur Abholung und Lieferung.', 'loc.kind': 'Abholung · Lieferung',
-    'loc.directions': 'Route anzeigen →', 'loc.callBtn': 'Zum Bestellen anrufen', 'loc.facebook': 'Facebook',
+    'loc.directions': 'Route anzeigen →', 'loc.callBtn': 'Zum Bestellen anrufen', 'social.followUs': 'Folgen Sie uns',
     'status.checking': 'Öffnungszeiten werden geprüft…', 'status.closedToday': 'Heute geschlossen',
     'status.openPrefix': 'Jetzt geöffnet · schließt um ', 'status.closedNow': 'Momentan geschlossen',
     'status.closedOpensPrefix': 'Geschlossen · öffnet um ', 'status.closedOpensSuffix': ' Uhr heute',
@@ -528,7 +541,7 @@ var translations = {
     'hero.starsSuffix': 'sur 5 (219 avis) sur TripAdvisor',
     'hero.callBtn': 'Appeler pour commander', 'hero.orderBtn': 'Commander en ligne',
     'loc.title': 'Adresse et horaires', 'loc.sub': 'Vente à emporter et livraison uniquement.', 'loc.kind': 'À emporter · Livraison',
-    'loc.directions': 'Itinéraire →', 'loc.callBtn': 'Appeler pour commander', 'loc.facebook': 'Facebook',
+    'loc.directions': 'Itinéraire →', 'loc.callBtn': 'Appeler pour commander', 'social.followUs': 'Suivez-nous',
     'status.checking': 'Vérification des horaires…', 'status.closedToday': "Fermé aujourd'hui",
     'status.openPrefix': 'Ouvert maintenant · ferme à ', 'status.closedNow': 'Fermé actuellement',
     'status.closedOpensPrefix': 'Fermé · ouvre à ', 'status.closedOpensSuffix': " aujourd'hui",
@@ -554,7 +567,7 @@ var translations = {
     'hero.starsSuffix': 'na 5 (219 opinii) na TripAdvisor',
     'hero.callBtn': 'Zadzwoń, aby zamówić', 'hero.orderBtn': 'Zamów online',
     'loc.title': 'Lokalizacja i godziny otwarcia', 'loc.sub': 'Tylko na wynos i z dostawą.', 'loc.kind': 'Na wynos · Dostawa',
-    'loc.directions': 'Wyznacz trasę →', 'loc.callBtn': 'Zadzwoń, aby zamówić', 'loc.facebook': 'Facebook',
+    'loc.directions': 'Wyznacz trasę →', 'loc.callBtn': 'Zadzwoń, aby zamówić', 'social.followUs': 'Obserwuj nas',
     'status.checking': 'Sprawdzanie godzin otwarcia…', 'status.closedToday': 'Dziś zamknięte',
     'status.openPrefix': 'Otwarte teraz · zamyka się o ', 'status.closedNow': 'Obecnie zamknięte',
     'status.closedOpensPrefix': 'Zamknięte · otwiera się o ', 'status.closedOpensSuffix': ' dzisiaj',
@@ -580,7 +593,7 @@ var translations = {
     'hero.starsSuffix': 'מתוך 5 (219 ביקורות) ב-TripAdvisor',
     'hero.callBtn': 'התקשרו להזמנה', 'hero.orderBtn': 'הזמנה אונליין',
     'loc.title': 'מיקום ושעות פתיחה', 'loc.sub': 'איסוף עצמי ומשלוח בלבד.', 'loc.kind': 'איסוף עצמי · משלוח',
-    'loc.directions': 'קבלת הוראות הגעה ←', 'loc.callBtn': 'התקשרו להזמנה', 'loc.facebook': 'פייסבוק',
+    'loc.directions': 'קבלת הוראות הגעה ←', 'loc.callBtn': 'התקשרו להזמנה', 'social.followUs': 'עקבו אחרינו',
     'status.checking': 'בודקים שעות פתיחה…', 'status.closedToday': 'סגור היום',
     'status.openPrefix': 'פתוח כעת · נסגר בשעה ', 'status.closedNow': 'סגור כרגע',
     'status.closedOpensPrefix': 'סגור · נפתח בשעה ', 'status.closedOpensSuffix': ' היום',
