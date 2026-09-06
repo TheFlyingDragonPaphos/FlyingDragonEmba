@@ -148,7 +148,8 @@ nav.links a:hover{ opacity:1; color:var(--red); }
 }
 .hero .stars{ font-size:0.95rem; color:#f7f0e8; margin-bottom: 28px; text-shadow: 0 1px 10px rgba(0,0,0,0.85); }
 .hero .stars b{ color:#fff; }
-.cta-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.cta-row{ display:flex; gap:14px; justify-content:center; align-items:center; flex-wrap:wrap; }
+.nowrap{ white-space:nowrap; }
 .btn{
   display:inline-flex; align-items:center; gap:8px;
   padding: 13px 22px; border-radius: 999px;
@@ -307,7 +308,7 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
     <p class="tag" data-i18n="hero.tag">Thai and Chinese Takeaway in Emba, Paphos. Freshly cooked Thai and Chinese food for takeaway and delivery.</p>
     <p class="stars">⭐ <b>4.5</b> <span data-i18n="hero.starsSuffix">out of 5 (219 reviews) on TripAdvisor</span></p>
     <div class="cta-row">
-      <a class="btn primary" href="tel:+35796774055"><span data-i18n="hero.callBtn">Call to order</span> · 96 774055</a>
+      <a class="btn primary" href="tel:+35796774055"><span data-i18n="hero.callBtn">Call to order</span> <span class="nowrap">· 96 774055</span></a>
       <a class="btn ghost" href="#order" data-i18n="hero.orderBtn">Order online</a>
     </div>
   </div>
