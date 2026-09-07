@@ -266,6 +266,10 @@ p.section-sub{
 
 /* ---------- gallery ---------- */
 #gallery{ background: var(--paper); }
+/* No section-sub under this heading (see HTML comment), so the title
+   needs its own bottom margin to keep the same breathing room every
+   other section gets from its subtitle. */
+#gallery .section-title{ margin-bottom: 32px; }
 .gallery-grid{
   display:grid; grid-template-columns: repeat(4, 1fr); gap:16px;
 }
@@ -334,8 +338,8 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
     </a>
     <div class="top-right">
       <nav class="links">
-        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
         <a href="#location" data-i18n="nav.location">Location &amp; hours</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
         <a href="#dishes" data-i18n="nav.dishes">Menu highlights</a>
         <a href="assets/menu.pdf" target="_blank" rel="noopener" data-i18n="nav.menu">Full menu</a>
         <a href="#order" data-i18n="nav.order">Order online</a>
@@ -364,25 +368,6 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
     <div class="cta-row">
       <a class="btn primary" href="tel:+35796774055"><span data-i18n="hero.callBtn">Call to order</span> <span class="nowrap">· 96 774055</span></a>
       <a class="btn ghost" href="#order" data-i18n="hero.orderBtn">Order online</a>
-    </div>
-  </div>
-</section>
-
-<section id="gallery">
-  <div class="wrap">
-    <h2 class="section-title" data-i18n="gallery.title">Take a look inside</h2>
-    <p class="section-sub" data-i18n="gallery.sub">The dining room, the seating area, and a few of our dishes.</p>
-
-    <!-- EDIT GALLERY PHOTOS HERE: replace the src on each <img> below with a
-         real photo (outside, seating area, dishes) as they become available.
-         The other tiles still reuse the same placeholder photo with a
-         different crop (object-position) as a stand-in until more real
-         photos are supplied. -->
-    <div class="gallery-grid">
-      <img src="assets/hero.jpg" style="object-position:50% 20%" alt="Outside The Flying Dragon">
-      <img src="assets/seating.jpg" style="object-position:50% 35%" alt="Seating area at The Flying Dragon">
-      <img src="assets/hero.jpg" style="object-position:15% 60%" alt="Food at The Flying Dragon">
-      <img src="assets/hero.jpg" style="object-position:45% 85%" alt="Food at The Flying Dragon">
     </div>
   </div>
 </section>
@@ -441,6 +426,27 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <!-- No descriptive subtitle here on purpose: most tiles below are
+         still the one placeholder photo in different crops (see comment
+         below), so a specific caption like "the dining room, the seating
+         area..." would promise more than the photos actually show yet.
+         Reusing the nav.gallery translation key keeps this heading and
+         the nav link in sync without a separate set of translations. -->
+    <h2 class="section-title" data-i18n="nav.gallery">Gallery</h2>
+
+    <!-- EDIT GALLERY PHOTOS HERE: to add more tiles, add another <img> with
+         a real photo and adjust .gallery-grid's column count above. -->
+    <div class="gallery-grid">
+      <img src="assets/exterior.jpg" style="object-position:50% 40%" alt="Outside The Flying Dragon">
+      <img src="assets/seating.jpg" style="object-position:50% 35%" alt="Seating area at The Flying Dragon">
+      <img src="assets/dining.jpg" style="object-position:50% 40%" alt="Dining room at The Flying Dragon">
+      <img src="assets/hero.jpg" style="object-position:50% 20%" alt="Food at The Flying Dragon">
     </div>
   </div>
 </section>
@@ -522,7 +528,6 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
 var translations = {
   en: {
     'nav.gallery': 'Gallery', 'nav.location': 'Location & hours', 'nav.dishes': 'Menu highlights', 'nav.menu': 'Full menu', 'nav.order': 'Order online',
-    'gallery.title': 'Take a look inside', 'gallery.sub': 'The dining room, the seating area, and a few of our dishes.',
     'dishes.viewMenuBtn': '📋 View full menu (PDF)',
     'brand.tagline': 'Thai, Chinese & Sushi Takeaway, Chlorakas',
     'hero.tag': 'Thai, Chinese and Sushi Takeaway in Chlorakas. Freshly prepared food, available for takeaway, delivery and dine-in.',
@@ -549,7 +554,6 @@ var translations = {
   },
   el: {
     'nav.gallery': 'Φωτογραφίες', 'nav.location': 'Ώρες & Τοποθεσία', 'nav.dishes': 'Προτεινόμενα πιάτα', 'nav.menu': 'Πλήρες μενού', 'nav.order': 'Παραγγελία online',
-    'gallery.title': 'Μια ματιά μέσα', 'gallery.sub': 'Η αίθουσα, ο χώρος καθισμάτων και μερικά από τα πιάτα μας.',
     'dishes.viewMenuBtn': '📋 Δείτε το πλήρες μενού (PDF)',
     'brand.tagline': 'Ταϊλανδέζικο, Κινέζικο & Sushi Take Away, Χλώρακα',
     'hero.tag': 'Ταϊλανδέζικο, Κινέζικο και Sushi Take Away στη Χλώρακα. Φρεσκομαγειρεμένο φαγητό, διαθέσιμο για take away, delivery και επιτόπια κατανάλωση.',
@@ -576,7 +580,6 @@ var translations = {
   },
   ru: {
     'nav.gallery': 'Фотогалерея', 'nav.location': 'Адрес и часы работы', 'nav.dishes': 'Популярные блюда', 'nav.menu': 'Полное меню', 'nav.order': 'Заказать онлайн',
-    'gallery.title': 'Загляните внутрь', 'gallery.sub': 'Зал, зона отдыха и несколько наших блюд.',
     'dishes.viewMenuBtn': '📋 Посмотреть полное меню (PDF)',
     'brand.tagline': 'Тайская, китайская еда и суши на вынос, Хлорака',
     'hero.tag': 'Тайская, китайская еда и суши на вынос в Хлораке. Свежеприготовленная еда — на вынос, с доставкой и в зале.',
@@ -603,7 +606,6 @@ var translations = {
   },
   de: {
     'nav.gallery': 'Galerie', 'nav.location': 'Standort & Öffnungszeiten', 'nav.dishes': 'Beliebte Gerichte', 'nav.menu': 'Vollständige Speisekarte', 'nav.order': 'Online bestellen',
-    'gallery.title': 'Ein Blick hinein', 'gallery.sub': 'Der Gastraum, der Sitzbereich und ein paar unserer Gerichte.',
     'dishes.viewMenuBtn': '📋 Vollständige Speisekarte ansehen (PDF)',
     'brand.tagline': 'Thailändisches, Chinesisches & Sushi Take-away, Chlorakas',
     'hero.tag': 'Thailändisches, chinesisches und Sushi Take-away in Chlorakas. Frisch zubereitetes Essen zum Mitnehmen, Liefern und vor Ort essen.',
@@ -630,7 +632,6 @@ var translations = {
   },
   fr: {
     'nav.gallery': 'Galerie', 'nav.location': 'Adresse et horaires', 'nav.dishes': 'Nos plats phares', 'nav.menu': 'Menu complet', 'nav.order': 'Commander en ligne',
-    'gallery.title': 'Un aperçu de l\u2019intérieur', 'gallery.sub': 'La salle, l\u2019espace assis et quelques-uns de nos plats.',
     'dishes.viewMenuBtn': '📋 Voir le menu complet (PDF)',
     'brand.tagline': 'Plats à emporter thaïlandais, chinois et sushis, Chlorakas',
     'hero.tag': "Plats à emporter thaïlandais, chinois et sushis à Chlorakas. Cuisine fraîchement préparée, à emporter, en livraison ou sur place.",
@@ -657,7 +658,6 @@ var translations = {
   },
   pl: {
     'nav.gallery': 'Galeria', 'nav.location': 'Lokalizacja i godziny otwarcia', 'nav.dishes': 'Nasze popularne dania', 'nav.menu': 'Pełne menu', 'nav.order': 'Zamów online',
-    'gallery.title': 'Zajrzyj do środka', 'gallery.sub': 'Sala, miejsca siedzące i kilka naszych dań.',
     'dishes.viewMenuBtn': '📋 Zobacz pełne menu (PDF)',
     'brand.tagline': 'Tajska, chińska kuchnia i sushi na wynos, Chlorakas',
     'hero.tag': 'Tajska, chińska kuchnia i sushi na wynos w Chlorakas. Świeżo przygotowywane jedzenie na wynos, z dostawą i na miejscu.',
@@ -684,7 +684,6 @@ var translations = {
   },
   he: {
     'nav.gallery': 'גלריה', 'nav.location': 'מיקום ושעות פתיחה', 'nav.dishes': 'המנות שלנו', 'nav.menu': 'התפריט המלא', 'nav.order': 'הזמנה אונליין',
-    'gallery.title': 'הצצה פנימה', 'gallery.sub': 'האולם, אזור הישיבה וכמה מהמנות שלנו.',
     'dishes.viewMenuBtn': '📋 צפו בתפריט המלא (PDF)',
     'brand.tagline': 'מסעדת טייק אווי תאילנדית, סינית וסושי, חלוראקה',
     'hero.tag': 'מסעדת טייק אווי תאילנדית, סינית וסושי בחלוראקה. אוכל טרי הזמין לאיסוף עצמי, למשלוח ולישיבה במקום.',
