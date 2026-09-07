@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Flying Dragon Thai and Chinese Takeaway | Chlorakas, Paphos</title>
-<meta name="description" content="The Flying Dragon Thai and Chinese Takeaway in Chlorakas, Paphos, Cyprus — Thai and Chinese food for takeaway and delivery.">
+<meta name="description" content="The Flying Dragon Thai and Chinese Takeaway in Chlorakas, Paphos, Cyprus — Thai, Chinese and sushi for takeaway and delivery.">
 <link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shojumaru&display=swap">
 <style>
 
 /* ============================================================
@@ -132,35 +135,37 @@ nav.links a:hover{ opacity:1; color:var(--red); }
 
 /* ---------- hero ---------- */
 .hero{
+  /* Restaurant's own wall painting, faded under a red wash so it reads as
+     texture/atmosphere rather than competing with the hero text. */
   background:
-    linear-gradient(rgba(21,13,10,0.72), rgba(21,13,10,0.84)),
-    url('assets/hero.jpg') center 30% / cover no-repeat;
+    linear-gradient(155deg, rgba(200,16,46,0.68) 0%, rgba(143,12,32,0.75) 100%),
+    url('assets/painting.jpg') center 30% / cover no-repeat;
   padding: 64px 24px 56px;
   text-align:center;
 }
 .hero img.logo{
-  width: 120px; height:120px; margin: 0 auto 18px;
+  width: 230px; height:230px; margin: 0 auto 20px;
   border-radius: 50%;
   box-shadow: var(--shadow);
-  border: 4px solid var(--paper);
+  border: 6px solid var(--paper);
   /* logo.png has a transparent (not white) background, so without this
-     the dark hero photo shows through the transparent parts, making the
-     dragon's dark linework blend into black instead of sitting on white */
+     the red hero background shows through the transparent parts, making
+     the dragon's dark linework blend in instead of sitting on white */
   background: var(--paper);
 }
 .hero h1{
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: 'Shojumaru', cursive;
+  font-size: clamp(2.1rem, 6.5vw, 3.4rem);
+  font-weight: 400;
   margin: 0 0 10px;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.5px;
   color:#fff; text-shadow: 0 2px 14px rgba(0,0,0,0.6);
 }
-.hero h1 span{ color: #ff8a8a; }
+.hero h1 span{ color:#fff; }
 .hero p.tag{
   max-width: 560px; margin: 0 auto 28px;
   color:#f7f0e8; font-size: 1.08rem; text-shadow: 0 1px 10px rgba(0,0,0,0.85);
 }
-.hero .stars{ font-size:0.95rem; color:#f7f0e8; margin-bottom: 28px; text-shadow: 0 1px 10px rgba(0,0,0,0.85); }
-.hero .stars b{ color:#fff; }
 .cta-row{ display:flex; gap:14px; justify-content:center; align-items:center; flex-wrap:wrap; }
 .nowrap{ white-space:nowrap; }
 .btn{
@@ -171,6 +176,11 @@ nav.links a:hover{ opacity:1; color:var(--red); }
 }
 .btn.primary{ background: var(--red); color:#fff; }
 .btn.primary:hover{ background: var(--red-dark); }
+/* The hero background is now solid red (see .hero above), so the default
+   red .btn.primary would nearly disappear against it — swap to a paper
+   button here so the "Call to order" CTA still stands out. */
+.hero .btn.primary{ background: var(--paper); color: var(--red-dark); }
+.hero .btn.primary:hover{ background: var(--cream); }
 .btn.ghost{ background: transparent; border-color: var(--ink); color: var(--ink); }
 .hero .btn.ghost{ border-color:#fff; color:#fff; }
 .hero .btn.ghost:hover{ background:#fff; color: var(--ink); }
@@ -232,6 +242,18 @@ p.section-sub{
    a 5th/6th dish later, this may be worth revisiting. */
 .dishes{ display:grid; grid-template-columns: repeat(2, 1fr); gap:20px; }
 @media (max-width: 560px){ .dishes{ grid-template-columns: 1fr; } }
+
+/* ---------- gallery ---------- */
+#gallery{ background: var(--paper); }
+.gallery-grid{
+  display:grid; grid-template-columns: repeat(4, 1fr); gap:16px;
+}
+.gallery-grid img{
+  width:100%; height:200px; object-fit:cover;
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+@media (max-width: 720px){ .gallery-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px){ .gallery-grid{ grid-template-columns: 1fr; } .gallery-grid img{ height:220px; } }
 .dish{
   background: var(--paper); border-radius: var(--radius);
   padding: 22px; box-shadow: var(--shadow);
@@ -256,15 +278,6 @@ p.section-sub{
 .menu-cta h2{ color:#fff; }
 .menu-cta p.section-sub{ color:#cfc2ba; }
 .order-row{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top: 24px; }
-
-/* ---------- reviews ---------- */
-.review-card{
-  background: var(--paper); border-radius: var(--radius); padding:26px;
-  box-shadow: var(--shadow); max-width: 420px; margin: 0 auto; text-align:center;
-}
-.review-card .score{ font-size:2.2rem; font-weight:800; color:var(--red); }
-.review-card .score small{ font-size:1rem; color:var(--muted); font-weight:600; }
-.review-card p{ color:var(--muted); font-size:0.95rem; }
 
 /* ---------- footer ---------- */
 footer{ background:#150d0b; color:#cbb; padding: 40px 24px 26px; text-align:center; font-size:0.85rem; }
@@ -295,6 +308,7 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
     </a>
     <div class="top-right">
       <nav class="links">
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
         <a href="#location" data-i18n="nav.location">Location &amp; hours</a>
         <a href="#dishes" data-i18n="nav.dishes">Menu highlights</a>
         <a href="assets/menu.pdf" target="_blank" rel="noopener" data-i18n="nav.menu">Full menu</a>
@@ -321,10 +335,28 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
     <!-- EDIT HERO TEXT HERE -->
     <h1>The Flying <span>Dragon</span></h1>
     <p class="tag" data-i18n="hero.tag">Thai and Chinese Takeaway in Chlorakas, Paphos. Freshly cooked Thai and Chinese food for takeaway and delivery.</p>
-    <p class="stars">⭐ <b>4.6</b> <span data-i18n="hero.starsSuffix">out of 5 (157 reviews) on TripAdvisor</span></p>
     <div class="cta-row">
       <a class="btn primary" href="tel:+35796774055"><span data-i18n="hero.callBtn">Call to order</span> <span class="nowrap">· 96 774055</span></a>
       <a class="btn ghost" href="#order" data-i18n="hero.orderBtn">Order online</a>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <h2 class="section-title" data-i18n="gallery.title">Take a look inside</h2>
+    <p class="section-sub" data-i18n="gallery.sub">The dining room, the seating area, and a few of our dishes.</p>
+
+    <!-- EDIT GALLERY PHOTOS HERE: replace the src on each <img> below with a
+         real photo (outside, seating area, dishes) as they become available.
+         Every tile currently reuses the same placeholder photo with a
+         different crop (object-position) as a stand-in until more real
+         photos are supplied. -->
+    <div class="gallery-grid">
+      <img src="assets/hero.jpg" style="object-position:50% 20%" alt="Outside The Flying Dragon">
+      <img src="assets/hero.jpg" style="object-position:75% 55%" alt="Seating area at The Flying Dragon">
+      <img src="assets/hero.jpg" style="object-position:15% 60%" alt="Food at The Flying Dragon">
+      <img src="assets/hero.jpg" style="object-position:45% 85%" alt="Food at The Flying Dragon">
     </div>
   </div>
 </section>
@@ -340,8 +372,8 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
         <h3>The Flying Dragon Thai and Chinese Takeaway</h3>
       </div>
       <div class="loc-body">
-        <div class="loc-row"><span class="ico">📍</span><span>Makariou III Ave, Chlorakas, Paphos 8250<br>
-          <a href="https://www.google.com/maps/search/?api=1&query=The+Flying+Dragon+Thai+and+Chinese+Takeaway+Makariou+III+Ave+Chlorakas+Paphos" target="_blank" rel="noopener" data-i18n="loc.directions">Get directions →</a></span></div>
+        <div class="loc-row"><span class="ico">📍</span><span>134 Ayiou Stefanou, Chlorakas (opposite Sklavenitis supermarket)<br>
+          <a href="https://www.google.com/maps/search/?api=1&query=The+Flying+Dragon+Thai+and+Chinese+Takeaway+134+Ayiou+Stefanou+Chlorakas+Paphos" target="_blank" rel="noopener" data-i18n="loc.directions">Get directions →</a></span></div>
         <div class="loc-row"><span class="ico">📞</span><a href="tel:+35796774055">+357 96 774055</a></div>
 
         <div class="status" id="status-takeaway">
@@ -364,7 +396,7 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
 
         <div class="map-embed">
           <iframe
-            src="https://www.google.com/maps?q=The+Flying+Dragon+Thai+and+Chinese+Takeaway+Makariou+III+Ave+Chlorakas+Paphos&output=embed"
+            src="https://www.google.com/maps?q=The+Flying+Dragon+Thai+and+Chinese+Takeaway+134+Ayiou+Stefanou+Chlorakas+Paphos&output=embed"
             width="100%" height="260" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             title="Map to The Flying Dragon Thai and Chinese Takeaway, Chlorakas">
           </iframe>
@@ -426,18 +458,7 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
     <div class="order-row">
       <a class="btn gold" href="https://wolt.com/en/cyp/paphos/restaurant/the-flying-dragon" target="_blank" rel="noopener" data-i18n="order.wolt">Order on Wolt</a>
       <a class="btn ghost" style="border-color:#fff;color:#fff" href="https://www.foody.com.cy/delivery/pafos/the-flying-dragon-thai-chinese" target="_blank" rel="noopener" data-i18n="order.foody">Order on Foody</a>
-    </div>
-  </div>
-</section>
-
-<section id="reviews">
-  <div class="wrap">
-    <h2 class="section-title" data-i18n="reviews.title">What people say</h2>
-    <p class="section-sub" data-i18n="reviews.sub">Our review score on TripAdvisor.</p>
-    <div class="review-card">
-      <div class="score">4.6 <small><span data-i18n="reviews.count">/ 5 · 157 reviews</span></small></div>
-      <p>The Flying Dragon Thai and Chinese Takeaway, Chlorakas</p>
-      <a class="btn ghost small" href="https://www.tripadvisor.com/Restaurant_Review-g190384-d4242189-Reviews-Flying_Dragon-Paphos_Paphos_District.html" target="_blank" rel="noopener" data-i18n="reviews.readBtn">Read reviews</a>
+      <a class="btn ghost" style="border-color:#fff;color:#fff" href="https://food.bolt.eu/en/444-paphos/p/104314-the-flying-dragon-thai-chinese-emba/" target="_blank" rel="noopener" data-i18n="order.bolt">Order on Bolt Food</a>
     </div>
   </div>
 </section>
@@ -450,7 +471,7 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
       <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.48 17.52 2 11.94 2S1.88 6.48 1.88 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.42V9.86c0-2.39 1.42-3.72 3.61-3.72 1.05 0 2.15.19 2.15.19v2.36h-1.21c-1.2 0-1.57.74-1.57 1.5v1.8h2.68l-.43 2.91h-2.25V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
     </a>
   </div>
-  <div><span data-i18n="footer.tagline">Thai and Chinese Takeaway</span>, Makariou III Ave, Chlorakas, Paphos 8250 &nbsp;·&nbsp; <a href="tel:+35796774055">96 774055</a></div>
+  <div><span data-i18n="footer.tagline">Thai and Chinese Takeaway</span>, 134 Ayiou Stefanou, Chlorakas &nbsp;·&nbsp; <a href="tel:+35796774055">96 774055</a></div>
   <div class="fine"><span data-i18n="footer.fine">Hours shown are subject to change around public holidays — call ahead to confirm.</span> © <span id="year"></span> The Flying Dragon Thai and Chinese Takeaway.</div>
 </footer>
 
@@ -464,13 +485,13 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
 // ============================================================
 var translations = {
   en: {
-    'nav.location': 'Location & hours', 'nav.dishes': 'Menu highlights', 'nav.menu': 'Full menu', 'nav.order': 'Order online',
+    'nav.gallery': 'Gallery', 'nav.location': 'Location & hours', 'nav.dishes': 'Menu highlights', 'nav.menu': 'Full menu', 'nav.order': 'Order online',
+    'gallery.title': 'Take a look inside', 'gallery.sub': 'The dining room, the seating area, and a few of our dishes.',
     'dishes.viewMenuBtn': '📋 View full menu (PDF)',
-    'brand.tagline': 'Thai & Chinese Takeaway, Chlorakas',
-    'hero.tag': 'Thai and Chinese Takeaway in Chlorakas, Paphos. Freshly cooked Thai and Chinese food for takeaway and delivery.',
-    'hero.starsSuffix': 'out of 5 (157 reviews) on TripAdvisor',
+    'brand.tagline': 'Thai, Chinese & Sushi Takeaway, Chlorakas',
+    'hero.tag': 'Thai, Chinese and Sushi Takeaway in Chlorakas. Freshly prepared food, available for takeaway, delivery and dine-in.',
     'hero.callBtn': 'Call to order', 'hero.orderBtn': 'Order online',
-    'loc.title': 'Location & hours', 'loc.sub': 'Takeaway and delivery only.', 'loc.kind': 'Takeaway · Delivery',
+    'loc.title': 'Location & hours', 'loc.sub': 'Takeaway, delivery, and dine-in (limited seating).', 'loc.kind': 'Takeaway · Delivery · Dine-in',
     'loc.directions': 'Get directions →', 'loc.callBtn': 'Call to order', 'social.followUs': 'Follow us',
     'status.checking': 'Checking hours…', 'status.closedToday': 'Closed today',
     'status.openPrefix': 'Open now · closes ', 'status.closedNow': 'Closed now',
@@ -485,19 +506,18 @@ var translations = {
     'dish4.desc': 'Grilled skewers with a classic peanut dipping sauce.',
     'allergen.note': 'Please let our staff know of any allergies before ordering — full ingredient information is available on request.',
     'order.title': 'Order online', 'order.sub': 'Full menu with current prices is on our delivery partners — or just call us directly.',
-    'order.wolt': 'Order on Wolt', 'order.foody': 'Order on Foody',
-    'reviews.title': 'What people say', 'reviews.sub': 'Our review score on TripAdvisor.', 'reviews.readBtn': 'Read reviews', 'reviews.count': '/ 5 · 157 reviews',
+    'order.wolt': 'Order on Wolt', 'order.foody': 'Order on Foody', 'order.bolt': 'Order on Bolt Food',
     'footer.tagline': 'Thai and Chinese Takeaway',
     'footer.fine': 'Hours shown are subject to change around public holidays — call ahead to confirm.'
   },
   el: {
-    'nav.location': 'Ώρες & Τοποθεσία', 'nav.dishes': 'Προτεινόμενα πιάτα', 'nav.menu': 'Πλήρες μενού', 'nav.order': 'Παραγγελία online',
+    'nav.gallery': 'Φωτογραφίες', 'nav.location': 'Ώρες & Τοποθεσία', 'nav.dishes': 'Προτεινόμενα πιάτα', 'nav.menu': 'Πλήρες μενού', 'nav.order': 'Παραγγελία online',
+    'gallery.title': 'Μια ματιά μέσα', 'gallery.sub': 'Η αίθουσα, ο χώρος καθισμάτων και μερικά από τα πιάτα μας.',
     'dishes.viewMenuBtn': '📋 Δείτε το πλήρες μενού (PDF)',
-    'brand.tagline': 'Ταϊλανδέζικο & Κινέζικο Take Away, Χλώρακα',
-    'hero.tag': 'Ταϊλανδέζικο και Κινέζικο Take Away στη Χλώρακα, Πάφος. Φρεσκομαγειρεμένο ταϊλανδέζικο και κινέζικο φαγητό για take away και delivery.',
-    'hero.starsSuffix': 'στα 5 (157 κριτικές) στο TripAdvisor',
+    'brand.tagline': 'Ταϊλανδέζικο, Κινέζικο & Sushi Take Away, Χλώρακα',
+    'hero.tag': 'Ταϊλανδέζικο, Κινέζικο και Sushi Take Away στη Χλώρακα. Φρεσκομαγειρεμένο φαγητό, διαθέσιμο για take away, delivery και επιτόπια κατανάλωση.',
     'hero.callBtn': 'Καλέστε για παραγγελία', 'hero.orderBtn': 'Παραγγελία online',
-    'loc.title': 'Ώρες & Τοποθεσία', 'loc.sub': 'Μόνο take away και delivery.', 'loc.kind': 'Take Away · Delivery',
+    'loc.title': 'Ώρες & Τοποθεσία', 'loc.sub': 'Take away, delivery και επιτόπια κατανάλωση (περιορισμένες θέσεις).', 'loc.kind': 'Take Away · Delivery · Επιτόπια κατανάλωση',
     'loc.directions': 'Οδηγίες διαδρομής →', 'loc.callBtn': 'Καλέστε για παραγγελία', 'social.followUs': 'Ακολουθήστε μας',
     'status.checking': 'Έλεγχος ωραρίου…', 'status.closedToday': 'Κλειστά σήμερα',
     'status.openPrefix': 'Ανοιχτά τώρα · κλείνει στις ', 'status.closedNow': 'Κλειστά τώρα',
@@ -512,19 +532,18 @@ var translations = {
     'dish4.desc': 'Ψητά σουβλάκια με κλασική σάλτσα φιστικιού.',
     'allergen.note': 'Παρακαλούμε ενημερώστε το προσωπικό μας για τυχόν αλλεργίες πριν παραγγείλετε — πλήρεις πληροφορίες συστατικών διαθέσιμες κατόπιν αιτήματος.',
     'order.title': 'Παραγγελία online', 'order.sub': 'Το πλήρες μενού με τις τρέχουσες τιμές θα το βρείτε στους συνεργάτες delivery — ή απλά καλέστε μας απευθείας.',
-    'order.wolt': 'Παραγγελία στο Wolt', 'order.foody': 'Παραγγελία στο Foody',
-    'reviews.title': 'Τι λένε οι πελάτες μας', 'reviews.sub': 'Η βαθμολογία μας στο TripAdvisor.', 'reviews.readBtn': 'Δείτε τις κριτικές', 'reviews.count': '/ 5 · 157 κριτικές',
+    'order.wolt': 'Παραγγελία στο Wolt', 'order.foody': 'Παραγγελία στο Foody', 'order.bolt': 'Παραγγελία στο Bolt Food',
     'footer.tagline': 'Ταϊλανδέζικο & Κινέζικο Take Away',
     'footer.fine': 'Το ωράριο ενδέχεται να αλλάξει τις αργίες — καλέστε μας για επιβεβαίωση.'
   },
   ru: {
-    'nav.location': 'Адрес и часы работы', 'nav.dishes': 'Популярные блюда', 'nav.menu': 'Полное меню', 'nav.order': 'Заказать онлайн',
+    'nav.gallery': 'Фотогалерея', 'nav.location': 'Адрес и часы работы', 'nav.dishes': 'Популярные блюда', 'nav.menu': 'Полное меню', 'nav.order': 'Заказать онлайн',
+    'gallery.title': 'Загляните внутрь', 'gallery.sub': 'Зал, зона отдыха и несколько наших блюд.',
     'dishes.viewMenuBtn': '📋 Посмотреть полное меню (PDF)',
-    'brand.tagline': 'Тайская и китайская еда навынос, Хлорака',
-    'hero.tag': 'Тайская и китайская еда навынос в Эмбе, Пафос. Свежеприготовленная тайская и китайская еда на вынос и с доставкой.',
-    'hero.starsSuffix': 'из 5 (157 отзывов) на TripAdvisor',
+    'brand.tagline': 'Тайская, китайская еда и суши на вынос, Хлорака',
+    'hero.tag': 'Тайская, китайская еда и суши на вынос в Хлораке. Свежеприготовленная еда — на вынос, с доставкой и в зале.',
     'hero.callBtn': 'Позвонить и заказать', 'hero.orderBtn': 'Заказать онлайн',
-    'loc.title': 'Адрес и часы работы', 'loc.sub': 'Только навынос и доставка.', 'loc.kind': 'Навынос · Доставка',
+    'loc.title': 'Адрес и часы работы', 'loc.sub': 'На вынос, с доставкой и в зале (ограниченная посадка).', 'loc.kind': 'На вынос · Доставка · В зале',
     'loc.directions': 'Проложить маршрут →', 'loc.callBtn': 'Позвонить и заказать', 'social.followUs': 'Мы в соцсетях',
     'status.checking': 'Проверка часов работы…', 'status.closedToday': 'Сегодня закрыто',
     'status.openPrefix': 'Открыто сейчас · закрывается в ', 'status.closedNow': 'Сейчас закрыто',
@@ -539,19 +558,18 @@ var translations = {
     'dish4.desc': 'Шашлычки на гриле с классическим арахисовым соусом.',
     'allergen.note': 'Пожалуйста, сообщите нашему персоналу о любых аллергиях перед заказом — полная информация о составе доступна по запросу.',
     'order.title': 'Заказать онлайн', 'order.sub': 'Полное меню с актуальными ценами доступно у наших партнёров по доставке — или просто позвоните нам напрямую.',
-    'order.wolt': 'Заказать через Wolt', 'order.foody': 'Заказать через Foody',
-    'reviews.title': 'Отзывы наших гостей', 'reviews.sub': 'Наш рейтинг на TripAdvisor.', 'reviews.readBtn': 'Читать отзывы', 'reviews.count': '/ 5 · 157 отзывов',
+    'order.wolt': 'Заказать через Wolt', 'order.foody': 'Заказать через Foody', 'order.bolt': 'Заказать через Bolt Food',
     'footer.tagline': 'Тайская и китайская еда навынос',
     'footer.fine': 'Часы работы могут меняться в праздничные дни — пожалуйста, звоните заранее для уточнения.'
   },
   de: {
-    'nav.location': 'Standort & Öffnungszeiten', 'nav.dishes': 'Beliebte Gerichte', 'nav.menu': 'Vollständige Speisekarte', 'nav.order': 'Online bestellen',
+    'nav.gallery': 'Galerie', 'nav.location': 'Standort & Öffnungszeiten', 'nav.dishes': 'Beliebte Gerichte', 'nav.menu': 'Vollständige Speisekarte', 'nav.order': 'Online bestellen',
+    'gallery.title': 'Ein Blick hinein', 'gallery.sub': 'Der Gastraum, der Sitzbereich und ein paar unserer Gerichte.',
     'dishes.viewMenuBtn': '📋 Vollständige Speisekarte ansehen (PDF)',
-    'brand.tagline': 'Thailändisches & Chinesisches Take-away, Chlorakas',
-    'hero.tag': 'Thailändisches und chinesisches Take-away in Chlorakas, Paphos. Frisch zubereitetes thailändisches und chinesisches Essen zum Mitnehmen und liefern lassen.',
-    'hero.starsSuffix': 'von 5 (157 Bewertungen) auf TripAdvisor',
+    'brand.tagline': 'Thailändisches, Chinesisches & Sushi Take-away, Chlorakas',
+    'hero.tag': 'Thailändisches, chinesisches und Sushi Take-away in Chlorakas. Frisch zubereitetes Essen zum Mitnehmen, Liefern und vor Ort essen.',
     'hero.callBtn': 'Zum Bestellen anrufen', 'hero.orderBtn': 'Online bestellen',
-    'loc.title': 'Standort & Öffnungszeiten', 'loc.sub': 'Nur Abholung und Lieferung.', 'loc.kind': 'Abholung · Lieferung',
+    'loc.title': 'Standort & Öffnungszeiten', 'loc.sub': 'Zum Mitnehmen, Lieferung und vor Ort essen (begrenzte Plätze).', 'loc.kind': 'Abholung · Lieferung · Vor Ort essen',
     'loc.directions': 'Route anzeigen →', 'loc.callBtn': 'Zum Bestellen anrufen', 'social.followUs': 'Folgen Sie uns',
     'status.checking': 'Öffnungszeiten werden geprüft…', 'status.closedToday': 'Heute geschlossen',
     'status.openPrefix': 'Jetzt geöffnet · schließt um ', 'status.closedNow': 'Momentan geschlossen',
@@ -566,19 +584,18 @@ var translations = {
     'dish4.desc': 'Gegrillte Spieße mit klassischer Erdnusssauce.',
     'allergen.note': 'Bitte informieren Sie unser Personal vor der Bestellung über etwaige Allergien — vollständige Zutateninformationen sind auf Anfrage erhältlich.',
     'order.title': 'Online bestellen', 'order.sub': 'Die vollständige Speisekarte mit aktuellen Preisen finden Sie bei unseren Lieferpartnern — oder rufen Sie uns einfach direkt an.',
-    'order.wolt': 'Bei Wolt bestellen', 'order.foody': 'Bei Foody bestellen',
-    'reviews.title': 'Was unsere Gäste sagen', 'reviews.sub': 'Unsere Bewertung auf TripAdvisor.', 'reviews.readBtn': 'Bewertungen lesen', 'reviews.count': '/ 5 · 157 Bewertungen',
+    'order.wolt': 'Bei Wolt bestellen', 'order.foody': 'Bei Foody bestellen', 'order.bolt': 'Bei Bolt Food bestellen',
     'footer.tagline': 'Thailändisches & Chinesisches Take-away',
     'footer.fine': 'Die Öffnungszeiten können an Feiertagen abweichen — bitte rufen Sie vorher an, um sie zu bestätigen.'
   },
   fr: {
-    'nav.location': 'Adresse et horaires', 'nav.dishes': 'Nos plats phares', 'nav.menu': 'Menu complet', 'nav.order': 'Commander en ligne',
+    'nav.gallery': 'Galerie', 'nav.location': 'Adresse et horaires', 'nav.dishes': 'Nos plats phares', 'nav.menu': 'Menu complet', 'nav.order': 'Commander en ligne',
+    'gallery.title': 'Un aperçu de l\u2019intérieur', 'gallery.sub': 'La salle, l\u2019espace assis et quelques-uns de nos plats.',
     'dishes.viewMenuBtn': '📋 Voir le menu complet (PDF)',
-    'brand.tagline': 'Plats à emporter thaïlandais et chinois, Chlorakas',
-    'hero.tag': "Plats à emporter thaïlandais et chinois à Chlorakas, Paphos. Cuisine thaïlandaise et chinoise fraîchement préparée, à emporter ou en livraison.",
-    'hero.starsSuffix': 'sur 5 (157 avis) sur TripAdvisor',
+    'brand.tagline': 'Plats à emporter thaïlandais, chinois et sushis, Chlorakas',
+    'hero.tag': "Plats à emporter thaïlandais, chinois et sushis à Chlorakas. Cuisine fraîchement préparée, à emporter, en livraison ou sur place.",
     'hero.callBtn': 'Appeler pour commander', 'hero.orderBtn': 'Commander en ligne',
-    'loc.title': 'Adresse et horaires', 'loc.sub': 'Vente à emporter et livraison uniquement.', 'loc.kind': 'À emporter · Livraison',
+    'loc.title': 'Adresse et horaires', 'loc.sub': 'À emporter, en livraison et sur place (places limitées).', 'loc.kind': 'À emporter · Livraison · Sur place',
     'loc.directions': 'Itinéraire →', 'loc.callBtn': 'Appeler pour commander', 'social.followUs': 'Suivez-nous',
     'status.checking': 'Vérification des horaires…', 'status.closedToday': "Fermé aujourd'hui",
     'status.openPrefix': 'Ouvert maintenant · ferme à ', 'status.closedNow': 'Fermé actuellement',
@@ -593,19 +610,18 @@ var translations = {
     'dish4.desc': 'Brochettes grillées avec une sauce aux cacahuètes classique.',
     'allergen.note': 'Merci d\'informer notre personnel de toute allergie avant de commander — la liste complète des ingrédients est disponible sur demande.',
     'order.title': 'Commander en ligne', 'order.sub': 'Le menu complet avec les prix actuels se trouve chez nos partenaires de livraison — ou appelez-nous directement.',
-    'order.wolt': 'Commander sur Wolt', 'order.foody': 'Commander sur Foody',
-    'reviews.title': 'Avis de nos clients', 'reviews.sub': 'Notre note sur TripAdvisor.', 'reviews.readBtn': 'Voir les avis', 'reviews.count': '/ 5 · 157 avis',
+    'order.wolt': 'Commander sur Wolt', 'order.foody': 'Commander sur Foody', 'order.bolt': 'Commander sur Bolt Food',
     'footer.tagline': 'Plats à emporter thaïlandais et chinois',
     'footer.fine': 'Les horaires peuvent varier les jours fériés — merci d\'appeler pour confirmer.'
   },
   pl: {
-    'nav.location': 'Lokalizacja i godziny otwarcia', 'nav.dishes': 'Nasze popularne dania', 'nav.menu': 'Pełne menu', 'nav.order': 'Zamów online',
+    'nav.gallery': 'Galeria', 'nav.location': 'Lokalizacja i godziny otwarcia', 'nav.dishes': 'Nasze popularne dania', 'nav.menu': 'Pełne menu', 'nav.order': 'Zamów online',
+    'gallery.title': 'Zajrzyj do środka', 'gallery.sub': 'Sala, miejsca siedzące i kilka naszych dań.',
     'dishes.viewMenuBtn': '📋 Zobacz pełne menu (PDF)',
-    'brand.tagline': 'Tajska i chińska kuchnia na wynos, Chlorakas',
-    'hero.tag': 'Tajska i chińska kuchnia na wynos w Chlorakas, Pafos. Świeżo przygotowywane tajskie i chińskie dania na wynos i z dostawą.',
-    'hero.starsSuffix': 'na 5 (157 opinii) na TripAdvisor',
+    'brand.tagline': 'Tajska, chińska kuchnia i sushi na wynos, Chlorakas',
+    'hero.tag': 'Tajska, chińska kuchnia i sushi na wynos w Chlorakas. Świeżo przygotowywane jedzenie na wynos, z dostawą i na miejscu.',
     'hero.callBtn': 'Zadzwoń, aby zamówić', 'hero.orderBtn': 'Zamów online',
-    'loc.title': 'Lokalizacja i godziny otwarcia', 'loc.sub': 'Tylko na wynos i z dostawą.', 'loc.kind': 'Na wynos · Dostawa',
+    'loc.title': 'Lokalizacja i godziny otwarcia', 'loc.sub': 'Na wynos, z dostawą i na miejscu (ograniczona liczba miejsc).', 'loc.kind': 'Na wynos · Dostawa · Na miejscu',
     'loc.directions': 'Wyznacz trasę →', 'loc.callBtn': 'Zadzwoń, aby zamówić', 'social.followUs': 'Obserwuj nas',
     'status.checking': 'Sprawdzanie godzin otwarcia…', 'status.closedToday': 'Dziś zamknięte',
     'status.openPrefix': 'Otwarte teraz · zamyka się o ', 'status.closedNow': 'Obecnie zamknięte',
@@ -620,19 +636,18 @@ var translations = {
     'dish4.desc': 'Grillowane szaszłyki z klasycznym sosem orzechowym.',
     'allergen.note': 'Prosimy poinformować nasz personel o wszelkich alergiach przed złożeniem zamówienia — pełne informacje o składnikach dostępne na życzenie.',
     'order.title': 'Zamów online', 'order.sub': 'Pełne menu z aktualnymi cenami znajdziesz u naszych partnerów dostawy — albo po prostu zadzwoń bezpośrednio do nas.',
-    'order.wolt': 'Zamów na Wolt', 'order.foody': 'Zamów na Foody',
-    'reviews.title': 'Opinie naszych gości', 'reviews.sub': 'Nasza ocena na TripAdvisor.', 'reviews.readBtn': 'Czytaj opinie', 'reviews.count': '/ 5 · 157 opinii',
+    'order.wolt': 'Zamów na Wolt', 'order.foody': 'Zamów na Foody', 'order.bolt': 'Zamów na Bolt Food',
     'footer.tagline': 'Tajska i chińska kuchnia na wynos',
     'footer.fine': 'Godziny otwarcia mogą się zmieniać w święta — prosimy zadzwonić, aby potwierdzić.'
   },
   he: {
-    'nav.location': 'מיקום ושעות פתיחה', 'nav.dishes': 'המנות שלנו', 'nav.menu': 'התפריט המלא', 'nav.order': 'הזמנה אונליין',
+    'nav.gallery': 'גלריה', 'nav.location': 'מיקום ושעות פתיחה', 'nav.dishes': 'המנות שלנו', 'nav.menu': 'התפריט המלא', 'nav.order': 'הזמנה אונליין',
+    'gallery.title': 'הצצה פנימה', 'gallery.sub': 'האולם, אזור הישיבה וכמה מהמנות שלנו.',
     'dishes.viewMenuBtn': '📋 צפו בתפריט המלא (PDF)',
-    'brand.tagline': 'מסעדת טייק אווי תאילנדית וסינית, חלוראקה',
-    'hero.tag': 'מסעדת טייק אווי תאילנדית וסינית בחלוראקה, פאפוס. אוכל תאילנדי וסיני טרי לאיסוף עצמי ולמשלוח.',
-    'hero.starsSuffix': 'מתוך 5 (157 ביקורות) ב-TripAdvisor',
+    'brand.tagline': 'מסעדת טייק אווי תאילנדית, סינית וסושי, חלוראקה',
+    'hero.tag': 'מסעדת טייק אווי תאילנדית, סינית וסושי בחלוראקה. אוכל טרי הזמין לאיסוף עצמי, למשלוח ולישיבה במקום.',
     'hero.callBtn': 'התקשרו להזמנה', 'hero.orderBtn': 'הזמנה אונליין',
-    'loc.title': 'מיקום ושעות פתיחה', 'loc.sub': 'איסוף עצמי ומשלוח בלבד.', 'loc.kind': 'איסוף עצמי · משלוח',
+    'loc.title': 'מיקום ושעות פתיחה', 'loc.sub': 'איסוף עצמי, משלוח וישיבה במקום (מקומות ישיבה מוגבלים).', 'loc.kind': 'איסוף עצמי · משלוח · ישיבה במקום',
     'loc.directions': 'קבלת הוראות הגעה ←', 'loc.callBtn': 'התקשרו להזמנה', 'social.followUs': 'עקבו אחרינו',
     'status.checking': 'בודקים שעות פתיחה…', 'status.closedToday': 'סגור היום',
     'status.openPrefix': 'פתוח כעת · נסגר בשעה ', 'status.closedNow': 'סגור כרגע',
@@ -647,8 +662,7 @@ var translations = {
     'dish4.desc': 'שיפודים על האש עם רוטב בוטנים קלאסי.',
     'allergen.note': 'אנא עדכנו את הצוות שלנו לגבי כל אלרגיה לפני ההזמנה — פרטי הרכיבים המלאים זמינים לפי בקשה.',
     'order.title': 'הזמנה אונליין', 'order.sub': 'התפריט המלא עם המחירים העדכניים נמצא אצל שותפי המשלוחים שלנו — או פשוט התקשרו אלינו ישירות.',
-    'order.wolt': 'הזמינו דרך Wolt', 'order.foody': 'הזמינו דרך Foody',
-    'reviews.title': 'מה אומרים עלינו', 'reviews.sub': 'הדירוג שלנו ב-TripAdvisor.', 'reviews.readBtn': 'קראו ביקורות', 'reviews.count': '/ 5 · 157 ביקורות',
+    'order.wolt': 'הזמינו דרך Wolt', 'order.foody': 'הזמינו דרך Foody', 'order.bolt': 'הזמינו דרך Bolt Food',
     'footer.tagline': 'מסעדת טייק אווי תאילנדית וסינית',
     'footer.fine': 'שעות הפתיחה עשויות להשתנות בחגים — אנא התקשרו מראש לאישור.'
   }
