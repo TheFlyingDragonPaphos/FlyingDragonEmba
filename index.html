@@ -319,8 +319,13 @@ p.section-sub{
 }
 .order-logo-btn:hover{ transform: translateY(-2px); }
 .order-logo-btn img{ width:auto; display:block; }
+/* Each logo file has very different internal padding around its actual
+   letterforms (measured via each image's real ink bounding box, not
+   guessed) — foody.svg in particular has ~47% empty padding baked into
+   its viewBox, so it needs a much taller box height than the others to
+   read as the same visual text size. */
 .order-logo-btn.wolt img{ height: 24px; }
-.order-logo-btn.foody img{ height: 34px; }
+.order-logo-btn.foody img{ height: 42px; }
 .order-logo-btn.bolt img{ height: 30px; }
 .sr-only{
   position:absolute; width:1px; height:1px; padding:0; margin:-1px;
@@ -438,7 +443,7 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
             <tr data-day="6"><td class="day" data-i18n="days.sat">Saturday</td><td>1:00pm – 10:00pm</td></tr>
           </table>
 
-          <p class="loc-note" data-i18n="loc.phoneNote">Takeaway and dine-in from opening time — delivery by phone only from 4pm. For delivery earlier in the day, order through Wolt, Bolt Food, or Foody instead.</p>
+          <p class="loc-note" data-i18n="loc.phoneNote">Takeaway and dine-in are available from opening time. For delivery between 1pm and 4pm, please use the delivery apps — Wolt, Bolt Food, or Foody. Phone orders for delivery start at 4pm.</p>
         </div>
 
         <div class="loc-map-col">
@@ -581,7 +586,7 @@ var translations = {
     'allergen.note': 'Please let our staff know of any allergies before ordering — full ingredient information is available on request.',
     'order.title': 'Order online', 'order.sub': 'Full menu with current prices is on our delivery partners — or just call us directly.',
     'order.wolt': 'Order on Wolt', 'order.foody': 'Order on Foody', 'order.bolt': 'Order on Bolt Food',
-    'loc.phoneNote': 'Takeaway and dine-in from opening time — delivery by phone only from 4pm. For delivery earlier in the day, order through Wolt, Bolt Food, or Foody instead.',
+    'loc.phoneNote': 'Takeaway and dine-in are available from opening time. For delivery between 1pm and 4pm, please use the delivery apps — Wolt, Bolt Food, or Foody. Phone orders for delivery start at 4pm.',
     'footer.tagline': 'Thai and Chinese Takeaway',
     'footer.fine': 'Hours shown are subject to change around public holidays — call ahead to confirm.'
   },
@@ -607,7 +612,7 @@ var translations = {
     'allergen.note': 'Παρακαλούμε ενημερώστε το προσωπικό μας για τυχόν αλλεργίες πριν παραγγείλετε — πλήρεις πληροφορίες συστατικών διαθέσιμες κατόπιν αιτήματος.',
     'order.title': 'Παραγγελία online', 'order.sub': 'Το πλήρες μενού με τις τρέχουσες τιμές θα το βρείτε στους συνεργάτες delivery — ή απλά καλέστε μας απευθείας.',
     'order.wolt': 'Παραγγελία στο Wolt', 'order.foody': 'Παραγγελία στο Foody', 'order.bolt': 'Παραγγελία στο Bolt Food',
-    'loc.phoneNote': 'Takeaway και επιτόπια κατανάλωση από την ώρα ανοίγματος — delivery τηλεφωνικά μόνο από τις 4μμ. Για delivery νωρίτερα, παραγγείλετε μέσω Wolt, Bolt Food ή Foody.',
+    'loc.phoneNote': 'Takeaway και επιτόπια κατανάλωση είναι διαθέσιμα από την ώρα ανοίγματος. Για delivery μεταξύ 1μμ και 4μμ, χρησιμοποιήστε τις εφαρμογές delivery — Wolt, Bolt Food ή Foody. Οι τηλεφωνικές παραγγελίες για delivery ξεκινούν στις 4μμ.',
     'footer.tagline': 'Ταϊλανδέζικο & Κινέζικο Take Away',
     'footer.fine': 'Το ωράριο ενδέχεται να αλλάξει τις αργίες — καλέστε μας για επιβεβαίωση.'
   },
@@ -633,7 +638,7 @@ var translations = {
     'allergen.note': 'Пожалуйста, сообщите нашему персоналу о любых аллергиях перед заказом — полная информация о составе доступна по запросу.',
     'order.title': 'Заказать онлайн', 'order.sub': 'Полное меню с актуальными ценами доступно у наших партнёров по доставке — или просто позвоните нам напрямую.',
     'order.wolt': 'Заказать через Wolt', 'order.foody': 'Заказать через Foody', 'order.bolt': 'Заказать через Bolt Food',
-    'loc.phoneNote': 'На вынос и в зале — с открытия. Доставка по телефону — только с 16:00. Для более ранней доставки закажите через Wolt, Bolt Food или Foody.',
+    'loc.phoneNote': 'Навынос и в зале доступны с открытия. Для доставки с 13:00 до 16:00 воспользуйтесь приложениями доставки — Wolt, Bolt Food или Foody. Доставка по телефону — с 16:00.',
     'footer.tagline': 'Тайская и китайская еда навынос',
     'footer.fine': 'Часы работы могут меняться в праздничные дни — пожалуйста, звоните заранее для уточнения.'
   },
@@ -659,7 +664,7 @@ var translations = {
     'allergen.note': 'Bitte informieren Sie unser Personal vor der Bestellung über etwaige Allergien — vollständige Zutateninformationen sind auf Anfrage erhältlich.',
     'order.title': 'Online bestellen', 'order.sub': 'Die vollständige Speisekarte mit aktuellen Preisen finden Sie bei unseren Lieferpartnern — oder rufen Sie uns einfach direkt an.',
     'order.wolt': 'Bei Wolt bestellen', 'order.foody': 'Bei Foody bestellen', 'order.bolt': 'Bei Bolt Food bestellen',
-    'loc.phoneNote': 'Zum Mitnehmen und vor Ort essen ab Öffnungszeit — Lieferung per Telefon erst ab 16 Uhr. Für frühere Lieferung bestellen Sie bitte über Wolt, Bolt Food oder Foody.',
+    'loc.phoneNote': 'Zum Mitnehmen und vor Ort essen ab Öffnungszeit verfügbar. Für Lieferung zwischen 13 und 16 Uhr nutzen Sie bitte die Lieferapps — Wolt, Bolt Food oder Foody. Telefonische Bestellungen für Lieferung sind ab 16 Uhr möglich.',
     'footer.tagline': 'Thailändisches & Chinesisches Take-away',
     'footer.fine': 'Die Öffnungszeiten können an Feiertagen abweichen — bitte rufen Sie vorher an, um sie zu bestätigen.'
   },
@@ -685,7 +690,7 @@ var translations = {
     'allergen.note': 'Merci d\'informer notre personnel de toute allergie avant de commander — la liste complète des ingrédients est disponible sur demande.',
     'order.title': 'Commander en ligne', 'order.sub': 'Le menu complet avec les prix actuels se trouve chez nos partenaires de livraison — ou appelez-nous directement.',
     'order.wolt': 'Commander sur Wolt', 'order.foody': 'Commander sur Foody', 'order.bolt': 'Commander sur Bolt Food',
-    'loc.phoneNote': 'À emporter et sur place dès l\u2019ouverture \u2014 livraison par téléphone seulement à partir de 16h. Pour une livraison plus tôt, commandez via Wolt, Bolt Food ou Foody.',
+    'loc.phoneNote': 'À emporter et sur place dès l\u2019ouverture. Pour une livraison entre 13h et 16h, merci d\u2019utiliser les applications de livraison — Wolt, Bolt Food ou Foody. Les commandes par téléphone pour la livraison démarrent à 16h.',
     'footer.tagline': 'Plats à emporter thaïlandais et chinois',
     'footer.fine': 'Les horaires peuvent varier les jours fériés — merci d\'appeler pour confirmer.'
   },
@@ -711,7 +716,7 @@ var translations = {
     'allergen.note': 'Prosimy poinformować nasz personel o wszelkich alergiach przed złożeniem zamówienia — pełne informacje o składnikach dostępne na życzenie.',
     'order.title': 'Zamów online', 'order.sub': 'Pełne menu z aktualnymi cenami znajdziesz u naszych partnerów dostawy — albo po prostu zadzwoń bezpośrednio do nas.',
     'order.wolt': 'Zamów na Wolt', 'order.foody': 'Zamów na Foody', 'order.bolt': 'Zamów na Bolt Food',
-    'loc.phoneNote': 'Na wynos i na miejscu od otwarcia — dostawa telefoniczna dopiero od 16:00. Aby zamówić dostawę wcześniej, zamów przez Wolt, Bolt Food lub Foody.',
+    'loc.phoneNote': 'Na wynos i na miejscu od otwarcia. Aby zamówić dostawę między 13:00 a 16:00, skorzystaj z aplikacji dostawy — Wolt, Bolt Food lub Foody. Zamówienia telefoniczne z dostawą przyjmujemy od 16:00.',
     'footer.tagline': 'Tajska i chińska kuchnia na wynos',
     'footer.fine': 'Godziny otwarcia mogą się zmieniać w święta — prosimy zadzwonić, aby potwierdzić.'
   },
@@ -737,7 +742,7 @@ var translations = {
     'allergen.note': 'אנא עדכנו את הצוות שלנו לגבי כל אלרגיה לפני ההזמנה — פרטי הרכיבים המלאים זמינים לפי בקשה.',
     'order.title': 'הזמנה אונליין', 'order.sub': 'התפריט המלא עם המחירים העדכניים נמצא אצל שותפי המשלוחים שלנו — או פשוט התקשרו אלינו ישירות.',
     'order.wolt': 'הזמינו דרך Wolt', 'order.foody': 'הזמינו דרך Foody', 'order.bolt': 'הזמינו דרך Bolt Food',
-    'loc.phoneNote': 'איסוף עצמי וישיבה במקום מרגע הפתיחה — משלוח בהזמנה טלפונית רק החל מהשעה 16:00. למשלוח מוקדם יותר, הזמינו דרך Wolt, Bolt Food או Foody.',
+    'loc.phoneNote': 'איסוף עצמי וישיבה במקום זמינים מרגע הפתיחה. למשלוח בין השעות 13:00 ל-16:00, אנא השתמשו באפליקציות המשלוחים — Wolt, Bolt Food או Foody. הזמנות טלפוניות למשלוח מתקבלות החל מהשעה 16:00.',
     'footer.tagline': 'מסעדת טייק אווי תאילנדית וסינית',
     'footer.fine': 'שעות הפתיחה עשויות להשתנות בחגים — אנא התקשרו מראש לאישור.'
   }
