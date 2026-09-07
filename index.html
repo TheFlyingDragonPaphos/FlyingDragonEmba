@@ -416,7 +416,7 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
              instead of buried between the hours table and the call button. -->
         <div class="loc-info">
           <div class="loc-row"><span class="ico">📍</span><span>134 Ayiou Stefanou, Chlorakas (opposite Sklavenitis supermarket)<br>
-            <a href="https://www.google.com/maps/search/?api=1&query=The+Flying+Dragon+Thai+and+Chinese+Takeaway+134+Ayiou+Stefanou+Chlorakas+Paphos" target="_blank" rel="noopener" data-i18n="loc.directions">Get directions →</a></span></div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=34.8053647,32.4109107" target="_blank" rel="noopener" data-i18n="loc.directions">Get directions →</a></span></div>
           <div class="loc-row"><span class="ico">📞</span><a href="tel:+35796774055">+357 96 774055</a></div>
 
           <div class="loc-actions">
@@ -447,9 +447,14 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
         </div>
 
         <div class="loc-map-col">
+          <!-- Pinned by exact coordinates, not a name/address search: a
+               text search for "The Flying Dragon..." matches the other,
+               fully separate Flying Dragon restaurant (Kato Paphos) too,
+               and Maps then shows both pins / both search results, which
+               risks sending a customer to the wrong location entirely. -->
           <div class="map-embed">
             <iframe
-              src="https://www.google.com/maps?q=The+Flying+Dragon+Thai+and+Chinese+Takeaway+134+Ayiou+Stefanou+Chlorakas+Paphos&output=embed"
+              src="https://www.google.com/maps?q=34.8053647,32.4109107&z=17&output=embed"
               width="100%" height="100%" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               title="Map to The Flying Dragon Thai and Chinese Takeaway, Chlorakas">
             </iframe>
