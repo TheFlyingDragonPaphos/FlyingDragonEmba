@@ -370,7 +370,7 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
         <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
         <!-- Menu highlights temporarily disabled — see #dishes below -->
         <a href="#dishes" data-i18n="nav.dishes" hidden>Menu highlights</a>
-        <a href="assets/menu.pdf" target="_blank" rel="noopener" data-i18n="nav.menu">Full menu</a>
+        <a href="assets/menu.pdf" data-menu-pdf target="_blank" rel="noopener" data-i18n="nav.menu">Full menu</a>
         <a href="#order" data-i18n="nav.order">Order online</a>
       </nav>
       <!-- Language switcher: EN is default, others are AI-translated -->
@@ -397,7 +397,7 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
     <div class="cta-row">
       <a class="btn primary" href="tel:+35796774055"><span data-i18n="hero.callBtn">Call to order</span> <span class="nowrap">· 96 774055</span></a>
       <a class="btn ghost" href="#order" data-i18n="hero.orderBtn">Order online</a>
-      <a class="btn ghost" href="assets/menu.pdf" target="_blank" rel="noopener" data-i18n="nav.menu">Full menu</a>
+      <a class="btn ghost" href="assets/menu.pdf" data-menu-pdf target="_blank" rel="noopener" data-i18n="nav.menu">Full menu</a>
     </div>
   </div>
 </section>
@@ -528,7 +528,7 @@ footer .fine{ margin-top:18px; color:#8a7a72; font-size:0.75rem; }
     </div>
 
     <div class="menu-pdf-cta">
-      <a class="btn primary" href="assets/menu.pdf" target="_blank" rel="noopener" data-i18n="dishes.viewMenuBtn">📋 View full menu (PDF)</a>
+      <a class="btn primary" href="assets/menu.pdf" data-menu-pdf target="_blank" rel="noopener" data-i18n="dishes.viewMenuBtn">📋 View full menu (PDF)</a>
     </div>
 
     <p class="allergen-note" data-i18n="allergen.note">Please let our staff know of any allergies before ordering — full ingredient information is available on request.</p>
@@ -762,6 +762,12 @@ var translations = {
 
 var currentLang = 'en';
 
+/* Translated menu PDFs, built from menu-source/ (see build.py there).
+   Languages not listed here get the original English/Greek menu.pdf. */
+var menuPdfs = {
+  ru: 'assets/menu-ru.pdf'
+};
+
 function parseTime(str, baseDate){
   var m = str.trim().match(/(\d+):(\d+)\s*(am|pm)/i);
   if(!m) return null;
@@ -819,6 +825,10 @@ function applyLanguage(lang){
   document.querySelectorAll('[data-i18n]').forEach(function(el){
     var key = el.getAttribute('data-i18n');
     if(dict[key] !== undefined) el.textContent = dict[key];
+  });
+
+  document.querySelectorAll('[data-menu-pdf]').forEach(function(a){
+    a.setAttribute('href', menuPdfs[lang] || 'assets/menu.pdf');
   });
 
   document.documentElement.setAttribute('lang', lang);

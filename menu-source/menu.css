@@ -1,0 +1,87 @@
+/* Print stylesheet for the translated menus. A4 portrait, three
+   columns that flow from page to page — readable on a phone as well
+   as on paper. Translations run ~30% longer than the Greek on the
+   original, so the original's fixed 2-page landscape layout overflowed. */
+@page { size: A4 portrait; margin: 9mm 8mm 10mm; }
+:root { --red: #b3121b; --ink: #1d1a18; --soft: #6b5f58; --line: #e6c9c4; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; }
+body { font-family: /*FONT*/; color: var(--ink); font-size: 7.6pt; line-height: 1.24;
+       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.flow { columns: 3; column-gap: 6mm; column-rule: .25mm solid var(--line); }
+section { margin-bottom: 3.2mm; }
+
+/* Section headings: English big, translation underneath */
+.h { text-align: center; color: var(--red); margin-bottom: 1.4mm; padding-top: .6mm;
+     border-top: .5mm solid var(--red); break-after: avoid; break-inside: avoid; }
+.h-en { font-weight: 900; font-size: 11pt; letter-spacing: .06em; text-transform: uppercase; line-height: 1.1; }
+.h-tr { font-weight: 700; font-size: 7.6pt; text-transform: uppercase; letter-spacing: .05em; }
+.h-sub { font-size: 7pt; color: var(--soft); }
+
+/* Dish rows */
+.it { display: grid; grid-template-columns: 6.6mm 1fr auto; column-gap: 1mm; margin: 0 0 1.1mm; break-inside: avoid; }
+.it.roll { grid-template-columns: 1fr auto; }
+.n { font-weight: 700; text-align: right; }
+.nm { font-weight: 700; }
+.mk { font-weight: 700; color: var(--red); }
+.ex { font-size: 6.6pt; color: var(--soft); }
+.al { font-style: italic; font-weight: 700; font-size: 6.4pt; color: var(--soft); white-space: nowrap; }
+.tr { font-style: italic; color: var(--red); font-size: 7pt; line-height: 1.2; }
+.p { font-weight: 700; white-space: nowrap; padding-left: 1mm; }
+.opt { display: flex; justify-content: space-between; gap: 1mm; font-size: 6.9pt; padding-left: 1.5mm; }
+.opt i { color: var(--red); }
+.new { display: inline-block; background: var(--red); color: #fff; font-size: 5.4pt; font-weight: 700;
+       text-transform: uppercase; letter-spacing: .04em; padding: .15mm 1mm; border-radius: 1mm;
+       vertical-align: .25mm; font-style: normal; }
+.sub { margin: 1.4mm 0 .9mm 7.6mm; break-inside: avoid; break-after: avoid; }
+.sub > b { font-size: 7.8pt; }
+.combo-rolls { font-weight: 700; font-size: 6.9pt; margin-top: .4mm; }
+
+/* Set menus */
+.set { break-inside: avoid; margin-bottom: 1.8mm; }
+.set-h { display: flex; justify-content: space-between; gap: 1mm; color: var(--red); font-weight: 700;
+         border-bottom: .2mm solid var(--line); margin-bottom: .5mm; }
+.set-en { text-transform: uppercase; font-weight: 900; letter-spacing: .03em; }
+.set ul { list-style: none; }
+.set li { font-size: 7pt; padding-left: 2.2mm; text-indent: -2.2mm; }
+.set li::before { content: "• "; color: var(--red); }
+
+/* Bomba bowls */
+.bowl { border: .3mm solid var(--red); border-radius: 1.2mm; padding: 1.4mm 1.8mm; margin-bottom: 1.6mm; break-inside: avoid; }
+.bowl-h { display: flex; gap: 1mm; align-items: baseline; margin-bottom: .6mm; }
+.bowl-h .p { margin-left: auto; }
+.al-line { text-align: right; margin-top: .4mm; }
+
+/* Allergen box */
+.allergens { border: .3mm solid var(--red); border-radius: 1.2mm; padding: 1.6mm 2mm; font-size: 6.9pt; break-inside: avoid; }
+.a-h { text-align: center; font-weight: 700; color: var(--red); text-decoration: underline; margin-bottom: .8mm; }
+.allergens ol { list-style: none; }
+.allergens li { margin-bottom: .3mm; }
+.a-note { margin-top: .8mm; font-style: italic; color: var(--soft); }
+
+.legend { text-align: center; font-weight: 700; font-size: 7.2pt; margin: 0 0 3mm; }
+footer { margin-top: 3mm; padding-top: 1.5mm; border-top: .25mm solid var(--line); }
+footer .legend { margin: 0 0 .8mm; }
+.note { text-align: center; font-weight: 700; font-size: 7.2pt; text-transform: uppercase; letter-spacing: .03em; }
+
+/* Header band (page 1) */
+.info { display: grid; grid-template-columns: auto 1fr auto auto auto; align-items: center; gap: 3.5mm;
+        border: .6mm solid var(--red); border-radius: 2mm; padding: 3mm 5mm 3mm 4mm; margin-bottom: 3mm; }
+.logo { width: 27mm; }
+.brand { font-weight: 900; font-size: 17pt; color: var(--red); letter-spacing: .04em; text-transform: uppercase; line-height: 1; }
+.tagline { font-size: 8.6pt; font-weight: 700; margin-top: 1mm; }
+.edition { font-size: 6.8pt; color: var(--soft); letter-spacing: .05em; text-transform: uppercase; margin-top: .8mm; }
+.i-h { font-size: 9pt; font-weight: 700; color: var(--red); margin-bottom: .8mm; text-align: center; }
+.hours table { border-collapse: collapse; font-size: 7.8pt; }
+.hours td { padding: .3mm 1.6mm; white-space: nowrap; }
+.hours td:first-child { font-weight: 700; border-right: .4mm solid var(--red); text-align: right; }
+.contact { font-size: 7pt; color: var(--red); max-width: 48mm; }
+.contact .c-b { color: var(--ink); font-weight: 700; }
+.contact .addr { margin-top: .8mm; }
+.phone { font-size: 13pt; font-weight: 900; color: var(--ink); white-space: nowrap; }
+.qr { width: 17mm; margin-right: 1mm; }
+
+/* Keep short sections in one piece rather than splitting across columns */
+.s-extras, .s-bowls, .s-curry, .s-szechuan, .s-sweetsour, .s-salads, .s-bao, .s-pork, .s-duck { break-inside: avoid; }
+.brand { white-space: nowrap; font-size: 15pt; }

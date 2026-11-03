@@ -1,0 +1,229 @@
+{
+  "_readme": "Master menu (English). Transcribed from assets/menu.pdf (Sep 2026 scan). Prices, numbers and allergens live ONLY here; translations in lang/<code>.json are keyed by item number. Fields: n=number, name, h=hot (H), nuts=(N), extra=short English text on the name line, desc=longer English description (only printed in the English edition), al=allergen numbers, price, new=NEW badge, opts=size/price options.",
+  "order": ["soups", "appetisers", "salads", "bao", "thai", "sweetsour", "szechuan", "curry", "chicken", "beef", "pork", "duck", "kingprawns", "vegetarian", "noodles", "rice", "extras", "sets", "bowls", "sushi", "allergens"],
+  "sections": {
+    "vegetarian": {"title": "Vegetarian Dishes", "items": [
+      {"n": "102", "name": "Stir fry Broccoli with garlic sauce and cashew nuts", "nuts": true, "al": "8,11", "price": "5.00"},
+      {"n": "103", "name": "Mix veg in black bean, chilli, oyster or curry sauce", "extra": "please choose", "al": "1,2,6", "price": "5.00"},
+      {"n": "104", "name": "Szechuan mixed vegetables", "h": true, "al": "1,6,8", "price": "5.00"},
+      {"n": "106", "name": "Black mushrooms, baby corn and bamboo shoots", "al": "6", "price": "5.00"},
+      {"n": "107", "name": "Stir fry veg with tofu and peanuts", "nuts": true, "al": "5,6", "price": "6.00"},
+      {"n": "203", "name": "Crispy tofu", "desc": "With mango, pineapple, peppers and onions in a sweet spicy glaze", "al": "1", "price": "6.00", "new": true},
+      {"n": "204", "name": "Crispy Cauliflower, babycorn and mushrooms Korean chilli style", "h": true, "al": "1,11", "price": "6.00", "new": true},
+      {"n": "205", "name": "Buddha Delight", "desc": "Stir fry courgettes, Chinese cabbage, shiitake mushrooms, carrots, broccoli, peppers, onions, snow peas and tofu", "al": "1,6", "price": "6.00", "new": true},
+      {"n": "206", "name": "Tofu and vegetables", "desc": "Choose from: salt and pepper / szechuan / black bean sauce", "al": "1,6,11", "price": "6.00", "new": true},
+      {"n": "208", "name": "Mushrooms Salt and Pepper", "al": "6", "price": "6.00", "new": true}
+    ]},
+    "rice": {"title": "Rice Dishes", "items": [
+      {"n": "209", "name": "Duck fried rice", "desc": "With spring onions and mushrooms", "al": "3,6", "price": "5.00"},
+      {"n": "210", "name": "Korean Spicy Pork Rice with vegetables", "al": "3,6,11", "price": "5.00"},
+      {"n": "108", "name": "Egg fried rice", "al": "3,6", "price": "3.00"},
+      {"n": "109", "name": "Steamed jasmine rice", "price": "2.50"},
+      {"n": "110", "name": "Special fried rice", "desc": "Chicken, shrimps, egg and vegetables", "al": "2,3,6", "price": "4.50"},
+      {"n": "111", "name": "Vegetable fried rice", "al": "3,6", "price": "4.00"},
+      {"n": "112", "name": "Pineapple fried rice", "al": "3,6", "price": "4.00"},
+      {"n": "114", "name": "Nasi Goreng", "h": true, "desc": "Medium spicy fried rice with chicken, pork, shrimps and egg", "al": "2,3,6", "price": "5.00"}
+    ]},
+    "extras": {"title": "Extras", "items": [
+      {"n": "122", "name": "Chips", "price": "2.00"},
+      {"n": "123", "name": "Curry Sauce", "price": "2.00"},
+      {"n": "124", "name": "Sweet & Sour Sauce", "price": "2.00"},
+      {"n": "125", "name": "Satay Sauce", "al": "4,5", "price": "2.00"},
+      {"n": "126", "name": "Pancakes", "al": "1", "price": "2.00"},
+      {"n": "127", "name": "Duck Sauce", "price": "0.50"}
+    ]},
+    "noodles": {"title": "Noodles", "items": [
+      {"n": "115", "name": "Chicken Chow Mein", "al": "1,3,6", "price": "7.00"},
+      {"n": "116", "name": "Mixed Chow Mein", "extra": "with chicken and shrimps", "al": "1,2,3,6", "price": "7.00"},
+      {"n": "117", "name": "Vegetable Chow Mein", "al": "1,3,6", "price": "5.00"},
+      {"n": "118", "name": "Plain Chow Mein", "al": "1,6", "price": "4.00"},
+      {"n": "119", "name": "King Prawn Chow Mein", "al": "1,2,3,6", "price": "8.00"},
+      {"n": "120", "name": "Chilli garlic Noodles with chicken", "h": true, "price": "7.00"},
+      {"n": "121", "name": "Singapore Noodles", "al": "1,2,6", "price": "7.00"},
+      {"n": "131", "name": "Spicy Pork and Prawn Chow Mein", "al": "1,2,3,6", "price": "8.00"},
+      {"n": "132", "name": "Teriyaki Beef Noodles", "al": "1,3,6", "price": "8.00"},
+      {"n": "133", "name": "Szechuan Noodles", "extra": "with chicken & broccoli", "al": "1,3,6,9", "price": "8.00"},
+      {"n": "134", "name": "Beansprout Chow Mein", "al": "1,3,6", "price": "5.00"},
+      {"n": "135", "name": "Duck Chow Mein", "al": "1,3,6", "price": "8.00"},
+      {"n": "136", "name": "Spicy Coconut Rice Noodles", "extra": "with prawns", "al": "2,3,6", "price": "8.00"},
+      {"n": "137", "name": "Vegetable Chow Mein with tofu, cashew nuts and sesame seeds", "al": "1,3,8,11", "price": "7.00"},
+      {"n": "138", "name": "Chicken Chow Mein", "extra": "with sweet chilli sauce", "al": "1,3,6", "price": "7.00"},
+      {"n": "139", "name": "Dragon Noodles", "desc": "Soft spicy udon noodles with broccoli, pepper, onion, babycorn, snow peas, cabbage, mushrooms", "al": "1,6,11", "new": true,
+        "opts": [{"id": "beef", "label": "Beef", "price": "8.00"}, {"id": "chicken", "label": "Chicken", "price": "7.00"}, {"id": "prawns", "label": "2 Prawns", "price": "8.00"}]},
+      {"n": "140", "name": "Shanghai Veg Noodles", "desc": "Soft spicy udon noodles with broccoli, pepper, mushrooms, onions, snow peas and cabbage", "al": "1,2,6,11", "price": "6.00", "new": true}
+    ]},
+    "bowls": {"title": "New Bomba Bowls", "type": "bowls", "items": [
+      {"n": "salmonbomba", "name": "Crispy Salmon Bomba", "desc": "Crispy salmon chunks, mixed leaves, sushi rice, cucumber, red pepper, mango, edamame beans, avocado. Topped with spring onions and sesame seeds, served with lemon mayo", "al": "3,4,6,11", "price": "10.00", "new": true},
+      {"n": "tofubomba", "name": "Tofu Bomba", "desc": "Sesame tofu cubes, mixed leaves, sushi rice, carrots, edamame beans, coriander, avocado, cucumber. Topped with spring onions and nuts, served with peanut dressing", "al": "5,11", "price": "7.00", "new": true}
+    ]},
+    "sets": {"title": "Set Menus", "type": "sets", "items": [
+      {"n": "chinese2", "name": "Chinese for 2", "price": "28.00", "list": ["Vegetable Spring Rolls", "Sesame King Prawns", "BBQ Ribs", "Prawn Crackers", "Chicken Chow Mein", "Beef with green pepper and black bean sauce", "Egg fried Rice"]},
+      {"n": "chinese4", "name": "Chinese for 4", "price": "56.00", "list": ["Vegetable Spring Rolls", "1/4 Duck with Pancakes", "Sesame Prawns", "BBQ Ribs", "Beef Szechuan", "Pork with Bamboo Shoots and Mushrooms", "Chicken Chow Mein", "Chicken Sweet and Sour", "Egg fried Rice", "Jasmine Rice", "Prawn Crackers"]},
+      {"n": "thai2", "name": "Thai for 2", "price": "28.00", "list": ["Thai Spring Rolls", "Chicken Satay", "Red Chicken Curry", "Prawn Pad Thai", "Jasmine Rice", "Prawn Crackers", "Thai Salad"]},
+      {"n": "asian2", "name": "Asian for 2", "price": "30.00", "list": ["Vegetable Spring Rolls", "Prawn Satay", "Green Chicken Curry", "King Prawn Chow Mein", "Nasi Goreng Spicy Rice", "Prawn Crackers", "Thai Salad"]},
+      {"n": "spicy2", "name": "Spicy for 2", "price": "28.00", "list": ["Curry Puffs", "Szechuan Ribs", "Spicy Chicken Curry", "Crispy Chilli Beef", "Egg fried Rice", "Prawn Crackers"]},
+      {"n": "veggie2", "name": "Veggie for 2", "price": "25.00", "list": ["Veg Rolls", "Crispy Spicy Cauliflower with babycorn and mushrooms", "Vegetable Chow Mein with tofu, cashew nuts & sesame seeds", "Tofu with Mango & Pineapple", "Jasmine Rice", "Chinese Salad"]}
+    ]},
+    "sushi": {"title": "Sushi To Go", "type": "sushi",
+      "combo": {"name": "Mixed Combo", "al": "1,2,3,4,6",
+        "rolls": ["California Crab", "Smoked Salmon Philadelphia", "King Prawn Tempura", "Dragon Roll", "Ebi Nigiri", "Deep Fried Unagi Roll"],
+        "opts": [{"id": "2", "pieces": "12", "price": "10.00"}, {"id": "4", "pieces": "24", "price": "18.00"}, {"id": "6", "pieces": "36", "price": "28.00"}, {"id": "8", "pieces": "48", "price": "36.00"}]},
+      "items": [
+        {"n": "california", "name": "California Crab", "price": "6.00"},
+        {"n": "philadelphia", "name": "Smoked Salmon Philadelphia", "price": "6.00"},
+        {"n": "tempura", "name": "King Prawn Tempura", "price": "7.00"},
+        {"n": "popcorn", "name": "Popcorn Prawn", "price": "7.00"},
+        {"n": "dragon", "name": "Dragon Roll", "extra": "king prawn and smoked salmon", "price": "7.00"},
+        {"n": "duckroll", "name": "Crispy Duck Roll", "price": "7.00"},
+        {"n": "avocado", "name": "Avocado Roll", "price": "5.00"},
+        {"n": "teriyaki", "name": "Salmon Teriyaki Roll", "price": "7.00"},
+        {"n": "unagi", "name": "Deep Fried Unagi Roll", "price": "7.00"},
+        {"n": "beetroot", "name": "Vegan Beetroot Roll", "price": "5.00"}
+      ]},
+    "soups": {"title": "Soups", "items": [
+      {"n": "1", "name": "Hot and sour soup", "h": true, "al": "3,6", "price": "4.00"},
+      {"n": "2", "name": "Chicken and sweet corn soup", "al": "3", "price": "4.00"},
+      {"n": "3", "name": "Won ton soup", "al": "1,6,11", "price": "4.00"},
+      {"n": "4", "name": "Chicken and noodle soup", "al": "1,6,11", "price": "4.00"},
+      {"n": "seafoodsoup", "num": "", "name": "Seafood Soup", "al": "2,3,4,6", "price": "5.00", "new": true},
+      {"sub": "tomyum", "name": "Tom Yum", "desc": "Hot, sour and spicy soup"},
+      {"n": "5", "name": "Prawn Tom Yum", "h": true, "al": "2,4,6", "price": "9.00"},
+      {"n": "6", "name": "Chicken Tom Yum", "h": true, "al": "4,6", "price": "5.00"},
+      {"n": "7", "name": "Vegetable Tom Yum", "h": true, "al": "4,6", "price": "4.00"},
+      {"sub": "tomka", "name": "Tom Ka", "desc": "Creamy coconut based soup"},
+      {"n": "8", "name": "Prawn Tom Ka", "h": true, "al": "2,4,6", "price": "9.00"},
+      {"n": "9", "name": "Chicken Tom Ka", "h": true, "al": "4,6", "price": "5.00"},
+      {"n": "10", "name": "Vegetable Tom Ka", "h": true, "al": "4,6", "price": "4.00"},
+      {"n": "11", "name": "Seafood Tom Ka", "al": "2,4,6", "price": "6.00", "new": true}
+    ]},
+    "appetisers": {"title": "Appetisers", "items": [
+      {"n": "12", "name": "Aromatic crispy duck", "al": "6",
+        "opts": [{"id": "a", "label": "a) 1/4 with 6 pancakes", "price": "10.00"}, {"id": "b", "label": "b) 1/2 with 12 pancakes", "price": "18.00"}]},
+      {"n": "13", "name": "Vegetable spring rolls", "al": "1,6", "price": "3.00"},
+      {"n": "15", "name": "Thai spring rolls", "desc": "Pork mince, veg, shrimps and noodles", "al": "1,2,6", "price": "3.00"},
+      {"n": "16", "name": "Shang Hi mini pork dumplings", "extra": "steamed", "al": "1,6,11", "price": "5.50"},
+      {"n": "17", "name": "Chicken Wings", "desc": "Choose your style: Szechuan, Korean chilli or Honey BBQ", "al": "1,6", "price": "7.00", "new": true},
+      {"n": "18", "name": "Spicy King Prawn (5 pcs)", "h": true, "al": "1,2", "price": "9.00"},
+      {"n": "19", "name": "Curry Puffs", "desc": "Spicy curried potato fried parcels", "al": "1,7", "price": "4.50"},
+      {"n": "20", "name": "Chicken Satay", "nuts": true, "al": "1,3,4,5", "price": "6.00"},
+      {"n": "21", "name": "Prawn Satay", "nuts": true, "al": "1,2,3,4,5", "price": "7.00"},
+      {"n": "22", "name": "Sesame prawn toast", "al": "3,4,6,11", "price": "3.00"},
+      {"n": "23", "name": "Tempura sesame king prawns", "al": "1,2,3,4,11", "price": "5.50"},
+      {"n": "24", "name": "BBQ Ribs", "al": "6", "price": "7.00"},
+      {"n": "25", "name": "Szechuan ribs", "al": "6,7", "price": "7.00"},
+      {"n": "26", "name": "Spicy Ribs", "h": true, "al": "6,9", "price": "7.00"},
+      {"n": "27", "name": "Honey Ribs", "al": "6", "price": "7.00"},
+      {"n": "207", "name": "Salt and pepper ribs", "h": true, "al": "6,9", "price": "7.00"},
+      {"n": "28", "name": "Prawn crackers", "price": "2.00"},
+      {"n": "29", "name": "Asian Combo", "nuts": true, "desc": "Veg spring rolls, prawn crackers, sesame prawns, BBQ ribs, chicken satay and a spicy Thai salad", "price": "18.00"},
+      {"n": "146", "name": "Crispy Chicken Pancake Rolls", "desc": "6 soft pancakes filled with chicken, leaves, onions, cucumber and spicy mayo", "al": "1,3", "price": "6.00"}
+    ]},
+    "salads": {"title": "Salads", "items": [
+      {"n": "30", "name": "Chinese Salad", "desc": "Lettuce, bean sprouts, cabbage, carrot, onion, tomato and cucumber with a tangy dressing", "al": "3", "price": "4.00"},
+      {"n": "31", "name": "Thai Salad", "nuts": true, "desc": "Mixed leaves, coriander, cucumber, spring onions, chilli, nuts and a spicy dressing", "al": "5,11", "price": "4.00"},
+      {"n": "32", "name": "Asian Salad", "nuts": true, "desc": "Vegetable noodles, egg noodles and fresh mango topped with peanuts and sesame", "al": "5,6,11", "price": "5.00"}
+    ]},
+    "bao": {"title": "Bao Buns", "items": [
+      {"n": "143", "name": "Duck Bao Bun", "desc": "Crispy duck, hoisin sauce, spring onion, cucumber, lettuce and spicy mayo", "al": "1,3,6", "price": "7.00"},
+      {"n": "144", "name": "King Prawn Bao Bun", "desc": "Crunchy prawn, carrots, red cabbage, coriander, cucumber and sweet chilli mayo", "al": "1,2,3,4", "price": "7.00"},
+      {"n": "145", "name": "Chicken Bao Bun", "desc": "Crispy chicken, lettuce, avocado, cucumber and mayo", "al": "1,3", "price": "7.00"}
+    ]},
+    "thai": {"title": "Thai Dishes", "items": [
+      {"sub": "redcurry", "name": "Red Curry", "h": true},
+      {"n": "33", "name": "Prawn red curry", "al": "2,4", "price": "9.00"},
+      {"n": "34", "name": "Chicken red curry", "al": "4", "price": "8.00"},
+      {"n": "35", "name": "Beef red curry", "al": "4", "price": "8.00"},
+      {"n": "36", "name": "Vegetable red curry", "al": "4", "price": "6.00"},
+      {"n": "37", "name": "Duck red curry", "al": "4", "price": "9.00"},
+      {"n": "14", "name": "Salmon red curry", "al": "4", "price": "9.00", "new": true},
+      {"sub": "greencurry", "name": "Green Curry", "h": true},
+      {"n": "38", "name": "Prawn green curry", "al": "2,4", "price": "9.00"},
+      {"n": "39", "name": "Chicken green curry", "al": "4", "price": "8.00"},
+      {"n": "40", "name": "Beef green curry", "al": "4", "price": "8.50"},
+      {"n": "41", "name": "Vegetable green curry", "al": "4", "price": "6.00"},
+      {"n": "50", "name": "Chicken Panang Curry", "desc": "Sweet taste and lower on chilli heat", "al": "4", "price": "8.00"},
+      {"n": "51", "name": "Massaman Beef Curry", "h": true, "desc": "Richly flavoured curry with potatoes and peanut topping", "al": "4,5", "price": "8.50"},
+      {"n": "52", "name": "Pork Jungle Curry", "h": true, "desc": "A fiery curry without the coconut milk", "al": "4", "price": "8.00"},
+      {"n": "53", "name": "Flying Dragon Curry", "h": true, "desc": "Red chicken curry with green beans, red pepper and carrots", "al": "4", "price": "8.00"},
+      {"n": "54", "name": "Gulai Ayam", "desc": "Indonesian medium spicy coconut curry with chicken, broccoli, black mushrooms, tomato and aubergines", "price": "8.00", "new": true},
+      {"n": "141", "name": "Chicken Yellow Curry", "desc": "With carrots, snow peas, broccoli and mushrooms", "al": "4", "price": "8.00", "new": true},
+      {"sub": "padthai", "name": "Pad Thai", "nuts": true, "desc": "Thailand's national dish of stir fried noodles, eggs, vegetables, chilli, tamarind, lemon and peanuts"},
+      {"n": "55", "name": "Chicken Pad Thai", "al": "3,5", "price": "8.00"},
+      {"n": "56", "name": "King Prawn Pad Thai", "al": "2,3,5", "price": "9.00"},
+      {"n": "57", "name": "Veg Pad Thai with Tofu", "al": "3,5", "price": "7.00"},
+      {"n": "58", "name": "Chicken Pad Prik", "al": "4", "price": "8.00"},
+      {"n": "59", "name": "King Prawn Pad Prik", "al": "2,4", "price": "9.00"}
+    ]},
+    "sweetsour": {"title": "Sweet & Sour Dishes", "items": [
+      {"n": "60", "name": "Sweet and sour chicken", "extra": "(in batter)", "al": "1", "price": "8.00"},
+      {"n": "61", "name": "Sweet and sour pork", "extra": "(in batter)", "al": "1", "price": "8.00"},
+      {"n": "62", "name": "Sweet and sour king prawns", "extra": "(in batter)", "al": "1", "price": "9.00"},
+      {"n": "63", "name": "Sweet and sour chicken Cantonese style", "extra": "(without batter)", "price": "8.00"}
+    ]},
+    "szechuan": {"title": "Szechuan Dishes", "items": [
+      {"n": "64", "name": "Duck Szechuan", "h": true, "al": "1,6,9", "price": "9.00"},
+      {"n": "65", "name": "Chicken Szechuan", "h": true, "al": "1,6,9", "price": "8.00"},
+      {"n": "66", "name": "Beef Szechuan", "h": true, "al": "1,6,9", "price": "8.50"},
+      {"n": "67", "name": "King Prawn Szechuan", "h": true, "al": "1,6,9", "price": "9.00"},
+      {"n": "68", "name": "Kalamari Szechuan", "h": true, "al": "1,2,6,9", "price": "8.00"}
+    ]},
+    "curry": {"title": "Curry Dishes", "items": [
+      {"n": "69", "name": "Chicken curry with Indian flavours", "h": true, "al": "1", "price": "8.00"},
+      {"n": "70", "name": "Beef Curry", "h": true, "al": "1", "price": "8.50"},
+      {"n": "71", "name": "King Prawn Curry", "h": true, "al": "1,2", "price": "9.00"}
+    ]},
+    "beef": {"title": "Beef", "items": [
+      {"n": "84", "name": "Beef with green pepper and black bean sauce", "al": "1,6", "price": "8.50"},
+      {"n": "85", "name": "Kung Po Beef with cashew nuts", "h": true, "nuts": true, "al": "1,2,6", "price": "8.50"},
+      {"n": "86", "name": "Beef Chop Suey", "al": "1,6", "price": "8.50"},
+      {"n": "87", "name": "Crispy chilli beef", "h": true, "al": "1,6", "price": "8.50"},
+      {"n": "88", "name": "Beef with broccoli in oyster sauce", "al": "1,2,6", "price": "8.50"},
+      {"n": "89", "name": "Beef with ginger and spring onions", "al": "1,6", "price": "8.50"}
+    ]},
+    "pork": {"title": "Pork", "items": [
+      {"n": "90", "name": "Pork with bamboo shoots and mushrooms", "al": "1,2,6", "price": "8.00"},
+      {"n": "91", "name": "Stir fry spicy pork and prawns with French beans", "h": true, "al": "1,2,6", "price": "8.00"},
+      {"n": "92", "name": "Pork with ginger & spring onions", "al": "1,2,6", "price": "8.00"},
+      {"n": "93", "name": "Pork with mixed veg", "al": "1,2,6,11", "price": "8.00"}
+    ]},
+    "chicken": {"title": "Chicken", "items": [
+      {"n": "72", "name": "Chicken in honey and plum sauce", "al": "1,6", "price": "8.00"},
+      {"n": "73", "name": "Chicken with green peppers and black bean sauce", "al": "1,6", "price": "8.00"},
+      {"n": "74", "name": "Kung Po Chicken with cashew nuts", "h": true, "nuts": true, "al": "1,6,8", "price": "8.00"},
+      {"n": "75", "name": "Chicken Chop Suey", "al": "1,6", "price": "8.00"},
+      {"n": "76", "name": "Crispy Chicken", "al": "1,6", "price": "8.00"},
+      {"n": "76a", "name": "Crispy Chicken Spicy Style", "h": true, "al": "1,6", "price": "8.00"},
+      {"n": "77", "name": "Honey Chilli Chicken", "al": "1,6", "price": "8.00"},
+      {"n": "78", "name": "Chicken and cashew nuts", "nuts": true, "al": "1,6,8", "price": "8.00"},
+      {"n": "79", "name": "Lemon Chicken", "al": "1,6", "price": "8.00"},
+      {"n": "80", "name": "Chicken and mango stir fry", "al": "1,6", "price": "8.00"},
+      {"n": "81", "name": "Chicken with ginger & spring onions", "al": "1,2,6", "price": "8.00"},
+      {"n": "82", "name": "Chicken with bamboo shoots and mushrooms", "al": "1,2,6", "price": "8.00"},
+      {"n": "83", "name": "Chicken and mixed veg", "al": "1,2,6", "price": "8.00"},
+      {"n": "142", "name": "Chicken two pepper sauce", "h": true, "al": "6,11", "price": "8.00"}
+    ]},
+    "duck": {"title": "Duck", "items": [
+      {"n": "94", "name": "Crispy aromatic duck", "al": "6",
+        "opts": [{"id": "a", "label": "a) 1/4 with 6 pancakes", "price": "10.00"}, {"id": "b", "label": "b) 1/2 with 12 pancakes", "price": "18.00"}, {"id": "c", "label": "c) whole with 24 pancakes", "price": "35.00"}]},
+      {"n": "95", "name": "Kung Po Duck with cashew nuts", "h": true, "nuts": true, "al": "1,6,8", "price": "9.00"},
+      {"n": "96", "name": "Duck with ginger and spring onions", "al": "1,2,6", "price": "9.00"},
+      {"n": "97", "name": "Duck in sweet chilli sauce", "al": "1,6", "price": "9.00"}
+    ]},
+    "kingprawns": {"title": "King Prawns", "subtitle": "(6 pieces)", "items": [
+      {"n": "98", "name": "King Prawns with ginger and spring onions", "al": "1,2,6", "price": "9.00"},
+      {"n": "99", "name": "King Prawns in garlic sauce", "al": "1,2,6", "price": "9.00"},
+      {"n": "100", "name": "Kung Po King Prawns with cashew nuts", "h": true, "nuts": true, "al": "1,2,8", "price": "9.00"},
+      {"n": "101", "name": "King Prawns with broccoli & oyster sauce", "al": "1,2,6", "price": "9.00"},
+      {"n": "201", "name": "Spicy Prawns", "h": true, "al": "1,2,6,9", "price": "9.00"},
+      {"n": "202", "name": "King Prawns Thai style", "h": true, "desc": "With mango, pineapple, onions, pepper, coriander and basil", "al": "1,2,6,9", "price": "9.00", "new": true}
+    ]}
+  },
+  "info": {
+    "phone": "96 77 40 55",
+    "tel": "+35796774055",
+    "address": "6, Pavlides Court, Chloraka, Pafos",
+    "facebook": "The Flying Dragon Chinese and Thai take Away",
+    "minOrder": "20",
+    "hours": [["tueSun", "17:00 – 22:30"], ["mon", null]]
+  }
+}
