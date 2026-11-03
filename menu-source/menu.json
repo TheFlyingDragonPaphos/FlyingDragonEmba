@@ -224,6 +224,6 @@
     "address": "6, Pavlides Court, Chloraka, Pafos",
     "facebook": "The Flying Dragon Chinese and Thai take Away",
     "minOrder": "20",
-    "hours": [["tueSun", "17:00 – 22:30"], ["mon", null]]
+    "hours": [["tueSat", "13:00 – 22:00"], ["sun", "16:00 – 22:00"], ["mon", null]]
   }
 }
