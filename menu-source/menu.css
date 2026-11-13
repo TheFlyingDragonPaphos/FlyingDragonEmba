@@ -85,3 +85,24 @@ footer .legend { margin: 0 0 .8mm; }
 /* Keep short sections in one piece rather than splitting across columns */
 .s-extras, .s-bowls, .s-curry, .s-szechuan, .s-sweetsour, .s-salads, .s-bao, .s-pork, .s-duck { break-inside: avoid; }
 .brand { white-space: nowrap; font-size: 15pt; }
+
+/* Right-to-left editions (Hebrew). English names, numbers and prices keep
+   their own left-to-right order; spacing that pointed left now points right.
+   Hebrew has no italics or capitals, so the translation lines stay upright. */
+[dir=rtl] .nm, [dir=rtl] .mk, [dir=rtl] .al, [dir=rtl] .p, [dir=rtl] .ex, [dir=rtl] .n,
+[dir=rtl] .set-en, [dir=rtl] .sub > b, [dir=rtl] .combo-rolls, [dir=rtl] .phone,
+[dir=rtl] .brand, [dir=rtl] .h-en, [dir=rtl] .addr, [dir=rtl] .hours td + td { direction: ltr; unicode-bidi: isolate; }
+[dir=rtl] .tr, [dir=rtl] .opt i, [dir=rtl] .a-note { font-style: normal; }
+[dir=rtl] .n { text-align: left; }
+[dir=rtl] .p { padding-left: 0; padding-right: 1mm; }
+[dir=rtl] .opt { padding-left: 0; padding-right: 1.5mm; }
+[dir=rtl] .sub { margin: 1.4mm 7.6mm .9mm 0; }
+[dir=rtl] .set li { padding-left: 0; padding-right: 2.2mm; }
+[dir=rtl] .hours td:first-child { border-right: 0; border-left: .4mm solid var(--red); text-align: left; }
+[dir=rtl] .al-line { text-align: left; }
+[dir=rtl] .qr { margin-right: 0; margin-left: 1mm; }
+[dir=rtl] .info { padding: 3mm 4mm 3mm 5mm; }
+/* Whole English lines read left-to-right, but sit on the right like the Hebrew */
+[dir=rtl] .l1, [dir=rtl] .sub { direction: ltr; text-align: right; }
+[dir=rtl] .tr { direction: rtl; }
+[dir=rtl] .ol { direction: ltr; unicode-bidi: isolate; }

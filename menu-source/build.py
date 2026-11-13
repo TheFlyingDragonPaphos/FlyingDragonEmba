@@ -51,7 +51,7 @@ def item_html(it, tr):
            f'<div class="tr">{e(tr["items"][it["n"]])}</div>']
     for o in it.get("opts", []):
         label = tr["opts"][it["n"] + o["id"]]
-        out.append(f'<div class="opt"><span>{e(o["label"])} · <i>{e(label)}</i></span><span class="p">{o["price"]}</span></div>')
+        out.append(f'<div class="opt"><span><span class="ol">{e(o["label"])}</span> · <i>{e(label)}</i></span><span class="p">{o["price"]}</span></div>')
     out.append(f'</div>{price}</div>')
     return "".join(out)
 
